@@ -1,0 +1,86 @@
+
+ShellHub is built using the microservices design pattern, meaning that
+multiple small, isolated services make up the server.
+In order to make it easy to test ShellHub as a whole, we have created
+a Docker Compose environment that brings all of these components up
+and connects them together on a single machine.
+
+## Installing
+
+Before continuing, make sure you have installed Docker Engine and Docker Compose.
+
+In a working directory, download the docker-compose file:
+
+```
+$ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/docker-compose.yml
+```
+
+Brings up the ShellHub server:
+
+```
+$ docker-compose up -d
+```
+
+## Creating the initial user
+
+After ShellHub server have been up and running you need to create the initial user.
+
+Go to the working directory and download the `add-user` utility from our repository:
+
+```
+$ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/bin/add-user
+```
+
+Then run the `add-user` utility:
+
+```
+$ sh ./add-user <username> <password>
+```
+
+## Adding your first device
+
+```
+$ docker run -d --restart=unless-stopped --privileged --net=host --pid=host -v /:/host -e SERVER_ADDRESS=http://localhost -e PRIVATE_KEY=/host/etc/shellhub.key -e TENANT_D=<TENANT-ID> shellhubio/agent:latest
+```
+
+> Note that you have to replace `<TENANT-ID>` with your Tenant ID.
+
+## Connecting to your device
+
+ShellHub supports different connection methods:
+
+* Web-based SSH client inside ShellHub UI (Chrome, Firefox)
+* Traditional command line SSH client (Linux, Mac OS X)
+* Any GUI SSH client like PuTTY (Windows)
+
+Open the ShellHub UI at [http://localhost]() and sign in using the username and password
+that was generated in a previous step.
+
+Once you had sign in, go to [Device Fleet](http://localhost/devices){target=_blank} page
+and follow instructions of one method:
+
+### Web-based SSH client
+
+In the Device Fleet page choose the device you want to connect to and click on Terminal icon
+located at *Actions* column of the table.
+
+A dialog will show prompting you for the username and password of any existing user in
+device's operating system. After providing credentials click on Connect button.
+
+### Command line SSH client
+
+To connect to your device using a command line SSH client you need to know its `SSHID` address.
+
+In the Device Fleet page choose the device you want to connect to and copy the device's `SSHID`
+address clicking on Copy icon located at SSHID address column of the table.
+
+```
+$ ssh <USER>@<SSHID>
+```
+
+Make sure to replace `<USER>` with existing user in device's operating system and
+`<SSHID>` with the SSHID address copied before.
+
+### PuTTY GUI SSH client
+
+TODO

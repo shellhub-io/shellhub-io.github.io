@@ -1,4 +1,3 @@
-
 ShellHub is built using the microservices design pattern, meaning that
 multiple small, isolated services make up the server.
 In order to make it easy to test ShellHub as a whole, we have created
@@ -39,11 +38,23 @@ $ sh ./add-user <username> <password>
 
 ## Adding your first device
 
+ShellHub can run in most of any Linux-based operating system with **Docker Engine
+installed and running**, no matter what architecture is your device.
+
+The following architectures are supported:
+
+* amd64
+* arm32v6
+* arm64v8
+
+Open the terminal of your device or access your device with ssh on the local network,
+then run the following commands to install the ShellHub agent:
+
 ```
-$ docker run -d --restart=unless-stopped --privileged --net=host --pid=host -v /:/host -e SERVER_ADDRESS=http://localhost -e PRIVATE_KEY=/host/etc/shellhub.key -e TENANT_D=<TENANT-ID> shellhubio/agent:latest
+$ curl "http://localhost/install.sh?tenant_id=<TENANT_ID>" | sh
 ```
 
-> Note that you have to replace `<TENANT-ID>` with your Tenant ID.
+!!! info "Note that you have to replace `<TENANT-ID>` with your Tenant ID"
 
 ## Connecting to your device
 
@@ -69,17 +80,18 @@ device's operating system. After providing credentials click on Connect button.
 
 ### Command line SSH client
 
-To connect to your device using a command line SSH client you need to know its `SSHID` address.
+To connect to your device using a command line SSH client you need to know its SSHID address.
 
-In the Device Fleet page choose the device you want to connect to and copy the device's `SSHID`
+In the Device Fleet page choose the device you want to connect to and copy the device's SSHID
 address clicking on Copy icon located at SSHID address column of the table.
 
 ```
 $ ssh <USER>@<SSHID>
 ```
 
-Make sure to replace `<USER>` with existing user in device's operating system and
-`<SSHID>` with the SSHID address copied before.
+!!! note ""
+    Make sure to replace `<USER>` with existing user in device's operating system and
+    `<SSHID>` with the SSHID address copied before.
 
 ### PuTTY GUI SSH client
 

@@ -22,4 +22,5 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - attr_list
+  - admonition
 

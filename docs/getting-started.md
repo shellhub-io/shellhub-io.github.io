@@ -85,6 +85,8 @@ To connect to your device using a command line SSH client you need to know its S
 In the Device Fleet page choose the device you want to connect to and copy the device's SSHID
 address clicking on Copy icon located at SSHID address column of the table.
 
+Run the following command in your terminal:
+
 ```
 $ ssh <USER>@<SSHID>
 ```

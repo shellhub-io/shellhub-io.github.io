@@ -1,12 +1,15 @@
+This tutorial will guide you through the steps needed to install and
+run ShellHub on your local machine.
+
+## Installing
+
 ShellHub is built using the microservices design pattern, meaning that
 multiple small, isolated services make up the server.
 In order to make it easy to test ShellHub as a whole, we have created
 a Docker Compose environment that brings all of these components up
 and connects them together on a single machine.
 
-## Installing
-
-Before continuing, make sure you have installed Docker Engine and Docker Compose.
+!!! warning "Before continuing, make sure you have installed Docker Engine and Docker Compose"
 
 In a working directory, download the docker-compose file:
 

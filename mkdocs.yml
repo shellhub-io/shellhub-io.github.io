@@ -1,10 +1,14 @@
 site_name: ShellHub
 theme:
   name: 'material'
+  feature:
+    tabs: true
 nav:
   - What is ShellHub?: index.md
-  - Getting started: getting-started.md
-  - Architecture: architecture.md
+  - Introduction:
+    - Welcome: welcome.md
+    - Getting started: getting-started.md
+    - Architecture: architecture.md
 markdown_extensions:
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:

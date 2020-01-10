@@ -23,3 +23,8 @@ Where:
 3. `<GATEWAY_ADDRESS>`: Is the gateway address identifier
 
 Example of SSHID: `lab.rasp-1@localhost`
+
+## Services
+
+ShellHub is built using the microservices design pattern, meaning that
+multiple small, isolated services make up the server.

@@ -97,4 +97,17 @@ $ ssh <USER>@<SSHID>
 
 ### PuTTY GUI SSH client
 
-TODO
+To connect to your device using a GUI SSH client you also need to its SSHID address.
+
+In the Device Fleet page choose the device you want to connect to and copy the device's SSHID
+address clicking on Copy icon located at SSHID address column of the table.
+
+Open Putty and fill it out with the following details:
+
+* Host Name (or IP address): `<USER>`@`<SSHID>`
+* Port: 22
+* Connection type: SSH
+
+!!! note ""
+    Make sure to replace `<USER>` with existing user in device's operating system and
+    `<SSHID>` with the SSHID address copied before.

@@ -6,7 +6,6 @@ The ShellHub is composed of two major parts, the **SSH Gateway** and the **Devic
 These parts work together to provide a secure SSH connection across the network
 to Linux-based devices.
 
-
 ## Basic concepts
 
 There are few basic concepts that are important to understand the ShellHub.
@@ -23,9 +22,6 @@ It must be installed on any cloud provider like Azure, Google, AWS or DigitalOce
 The ShellHub device agent which must be installed on the device.
 
 This guide is for those looking for a deeper understanding of ShellHub.
-
-If you are looking for instructions on how to set up ShellHub
-for your device fleet, check out the [Getting Started](getting-started.md).
 
 ### SSHID
 

@@ -1,5 +1,8 @@
 This tutorial will guide you through the steps needed to install and
-run ShellHub on your local machine.
+run ShellHub on your local computer.
+
+If you are looking for instructions on how to set up ShellHub
+for your device fleet on your cloud infrastructure the same steps apply.
 
 ## Installing
 
@@ -54,10 +57,13 @@ Open the terminal of your device or access your device with ssh on the local net
 then run the following commands to install the ShellHub agent:
 
 ```
-$ curl "http://localhost/install.sh?tenant_id=<TENANT_ID>" | sh
+$ curl "http://<SERVER_IP>/install.sh?tenant_id=<TENANT_ID>" | sh
 ```
 
-!!! info "Note that you have to replace `<TENANT-ID>` with your Tenant ID"
+!!! info ""
+    Note that you have to replace `<TENANT_ID>` with your Tenant ID and
+    `<SERVER_IP>` with the public IP address of the host that is running
+    ShellHub.
 
 ## Connecting to your device
 
@@ -70,7 +76,7 @@ ShellHub supports different connection methods:
 Open the ShellHub UI at [http://localhost]() and sign in using the username and password
 that was generated in a previous step.
 
-Once you had sign in, go to [Device Fleet](http://localhost/devices){target=_blank} page
+Once you had sign in, go to Device Fleet page ([http://localhost/devices](){target=_blank})
 and follow instructions of one method:
 
 ### Web-based SSH client

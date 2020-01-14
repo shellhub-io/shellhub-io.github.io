@@ -42,19 +42,16 @@ Then run the `add-user` utility:
 $ sh ./add-user <username> <password>
 ```
 
+!!! info "You need to copy the Tenant ID from the command output"
+
 ## Adding your first device
 
-ShellHub can run in most of any Linux-based operating system with **Docker Engine
-installed and running**, no matter what architecture is your device.
+To add your first device to ShellHub you need to install ShellHub Agent onto it.
 
-The following architectures are supported:
+The ShellHub Agent runs inside a Docker container. Make sure you have Docker
+installed and properly set up.
 
-* amd64
-* arm32v6
-* arm64v8
-
-Open the terminal of your device or access your device with ssh on the local network,
-then run the following commands to install the ShellHub agent:
+Open the terminal of your device then run the following commands to install the ShellHub agent:
 
 ```
 $ curl "http://<SERVER_IP>/install.sh?tenant_id=<TENANT_ID>" | sh

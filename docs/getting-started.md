@@ -20,6 +20,24 @@ In a working directory, download the docker-compose file:
 $ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/docker-compose.yml
 ```
 
+### Generate keys
+
+You need to generate key pairs (private and public) for your ShellHub server instance.
+
+Download the `keygen` script to help you do that:
+
+```
+$ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/bin/keygen
+```
+
+Generate key pairs running:
+
+```
+$ sh ./keygen
+```
+
+### Starting
+
 Brings up the ShellHub server:
 
 ```

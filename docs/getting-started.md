@@ -44,6 +44,8 @@ Brings up the ShellHub server:
 $ docker-compose up -d
 ```
 
+!!! warning "Make sure port 80 and 22 are free at the host"
+
 ## Creating the initial user
 
 After ShellHub server have been up and running you need to create the initial user.

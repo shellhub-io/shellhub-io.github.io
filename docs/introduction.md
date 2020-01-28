@@ -6,6 +6,10 @@ The ShellHub is composed of two major parts, the **SSH Gateway** and the **Devic
 These parts work together to provide a secure SSH connection across the network
 to Linux-based devices.
 
+## Architecture
+
+![Diagram](img/diagram.png)
+
 ## Basic concepts
 
 There are few basic concepts that are important to understand the ShellHub.

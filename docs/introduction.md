@@ -33,8 +33,8 @@ SSHID consist of following format:
 
 Where:
 
-1. `<NAMESPACE>`: Is the account namespace identifier
-2. `<DEVICE_NAME>`: Is the device name identifier
-3. `<GATEWAY_ADDRESS>`: Is the gateway address identifier
+1. `<NAMESPACE>`: the account namespace identifier
+2. `<DEVICE_NAME>`: the device name identifier
+3. `<GATEWAY_ADDRESS>`: the gateway address identifier
 
 Example of SSHID: `lab.rasp-1@localhost`

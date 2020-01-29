@@ -1,10 +1,31 @@
+# Project information
 site_name: ShellHub
+site_description: 'ShellHub enables teams to easily access any Linux device behind firewall and NAT'
+site_url: 'https://github.com/shellhub-io'
+
+# Repository
+repo_name: 'shellhub-io/shellhub.git'
+repo_url: 'https://github.com/shellhub-io/shellhub.git'
+
+# Copyright
+copyright: 'Copyright &copy; 2020 O.S. Systems'
+
+# Configuration
 theme:
   name: 'material'
-nav:
-  - What is ShellHub?: index.md
-  - Introduction: introduction.md
-  - Getting started: getting-started.md
+
+# Customization
+extra:
+  manifest: 'manifest.webmanifest'
+  social:
+    - type: 'github'
+      link: 'https://github.com/OSSystems'
+    - type: 'twitter'
+      link: 'https://twitter.com/OSSystemsNews?s=20'
+    - type: 'linkedin'
+      link: 'https://www.linkedin.com/company/ossystems'
+
+# Extensions
 markdown_extensions:
   - markdown.extensions.admonition
   - markdown.extensions.codehilite:
@@ -36,3 +57,10 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.tilde
   - attr_list
+
+# Navigation
+nav:
+  - What is ShellHub?: index.md
+  - Introduction: introduction.md
+  - Getting started: getting-started.md
+

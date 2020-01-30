@@ -11,6 +11,9 @@ repo_url: 'https://github.com/shellhub-io/shellhub.git'
 copyright: 'Copyright &copy; 2020 O.S. Systems'
 
 # Configuration
+edit_uri: '/shellhub-io/shellhub-io.github.io/edit/src/docs'
+
+# Theme
 theme:
   name: 'material'
 

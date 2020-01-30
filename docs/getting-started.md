@@ -14,26 +14,22 @@ and connects them together on a single machine.
 
 !!! warning "Before continuing, make sure you have installed Docker Engine and Docker Compose"
 
-First off, download the docker-compose file:
+In a working directory, clone the ShellHub repository:
 
 ```
-$ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/docker-compose.yml
+$ git clone -b v0.0.1 https://github.com/shellhub-io/shellhub.git shellhub-v0.0.1
+```
+
+```
+$ cd shellhub-v0.0.1
 ```
 
 ### Generate keys
 
 It is required to generate a key pair (private and public) for your ShellHub server instance.
 
-For such, you may download the `keygen` script:
-
 ```
-$ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/bin/keygen
-```
-
-And generate key pairs running:
-
-```
-$ sh ./keygen
+$ ./bin/keygen
 ```
 
 ### Starting
@@ -50,16 +46,8 @@ $ docker-compose up -d
 
 As the ShellHub server is up and running, you need to create the first user.
 
-On the current working directory, download the `add-user` utility from [our repository](https://github.com/shellhub-io):
-
 ```
-$ wget https://raw.githubusercontent.com/shellhub-io/shellhub/master/bin/add-user
-```
-
-Then run the `add-user` utility:
-
-```
-$ sh ./add-user <username> <password>
+$ ./bin/add-user <username> <password>
 ```
 
 !!! info "You should keep the _Tenant ID_ from the command output"

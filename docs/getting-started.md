@@ -17,11 +17,11 @@ and connects them together on a single machine.
 In a working directory, clone the ShellHub repository:
 
 ```
-$ git clone -b v0.0.1 https://github.com/shellhub-io/shellhub.git shellhub-v0.0.1
+git clone -b v0.0.1 https://github.com/shellhub-io/shellhub.git shellhub-v0.0.1
 ```
 
 ```
-$ cd shellhub-v0.0.1
+cd shellhub-v0.0.1
 ```
 
 ### Generate keys
@@ -29,7 +29,7 @@ $ cd shellhub-v0.0.1
 It is required to generate a key pair (private and public) for your ShellHub server instance.
 
 ```
-$ ./bin/keygen
+./bin/keygen
 ```
 
 ### Starting
@@ -37,7 +37,7 @@ $ ./bin/keygen
 For bringing up the ShellHub server, run:
 
 ```
-$ docker-compose up -d
+docker-compose up -d
 ```
 
 !!! warning "Make sure ports 80 and 22 are available at the host end"
@@ -47,7 +47,7 @@ $ docker-compose up -d
 As the ShellHub server is up and running, you need to create the first user.
 
 ```
-$ ./bin/add-user <username> <password>
+./bin/add-user <username> <password>
 ```
 
 !!! info "You should keep the _Tenant ID_ from the command output"
@@ -62,7 +62,7 @@ installed and properly set up.
 Open a terminal on your device and then run the following commands to install the ShellHub agent:
 
 ```
-$ curl "http://<SERVER_IP>/install.sh?tenant_id=<TENANT_ID>" | sh
+curl "http://<SERVER_IP>/install.sh?tenant_id=<TENANT_ID>" | sh
 ```
 
 !!! info ""
@@ -102,7 +102,7 @@ address clicking on _Copy_ icon located on SSHID address column of the chart.
 Then, run the following command on your terminal:
 
 ```
-$ ssh <USER>@<SSHID>
+ssh <USER>@<SSHID>
 ```
 
 !!! note ""

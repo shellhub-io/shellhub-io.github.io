@@ -66,4 +66,7 @@ nav:
   - What is ShellHub?: index.md
   - Introduction: introduction.md
   - Getting started: getting-started.md
-
+  - Guides:
+    - Adding accounts: guides/adding-accounts.md
+    - Registering a device: guides/registering-device.md
+    - Connecting to a device: guides/connecting-device.md

@@ -2,43 +2,35 @@
 
 This introduction section is intended to give a high-level overview of the ShellHub.
 
-The ShellHub is composed of two major parts, the **SSH Gateway** and the **Device Agent**.
-These parts work together to provide a secure SSH connection across the network
-to Linux-based devices.
-
-## Architecture
-
 ![Diagram](img/diagram.png)
-
-## Basic concepts
 
 There are few basic concepts that are important to understand the ShellHub.
 Those basic concepts are detailed below:
 
-### SSH Gateway
+## SSH gateway
 
-The ShellHub SSH gateway is a modern SSH server built using the microservices
-design pattern, meaning that multiple small, isolated services make up the server.
-It must be installed on any cloud provider like Azure, Google, AWS or DigitalOcean.
+The SSH gateway is a modern SSH server which forward connections to the devices
+running ShellHub's agent.
 
-### Device Agent
+## Device
 
-The ShellHub device agent which must be installed on the device.
+An internet-connected device, such as a computer or something more specific like a single-board computer, running ShellHub's agent.
 
-This guide is for those looking for a deeper understanding of ShellHub.
+## Agent
 
-### SSHID
+ShellHub's agent which must be installed on the device.
 
-SSHID is a unique address to identify a device in ShellHub SSH gateway.
+## SSHID
 
-SSHID consist of following format:
+SSHID is a unique address to identify a device in the SSH gateway, which must
+be specified in the following format:
 
     <NAMESPACE>.<DEVICE_NAME>@<GATEWAY_ADDRESS>
 
 Where:
 
-1. `<NAMESPACE>`: the account namespace identifier
-2. `<DEVICE_NAME>`: the device name identifier
-3. `<GATEWAY_ADDRESS>`: the gateway address identifier
+* `<NAMESPACE>`: Is the account namespace identifier
+* `<DEVICE_NAME>`: Is the device name identifier
+* `<GATEWAY_ADDRESS>`: Is the gateway address identifier
 
-Example of SSHID: `lab.rasp-1@localhost`
+!!! info "Example of SSHID: `lab.rasp-1@localhost`"

@@ -16,6 +16,8 @@ edit_uri: '/shellhub-io/shellhub-io.github.io/edit/src/docs'
 # Theme
 theme:
   name: 'material'
+  feature:
+    tabs: false
 
 # Customization
 extra:
@@ -64,9 +66,10 @@ markdown_extensions:
 # Navigation
 nav:
   - What is ShellHub?: index.md
-  - Introduction: introduction.md
-  - Getting started: getting-started.md
+  - Overview: introduction.md
+  - Getting started:
+    - Installing: installing.md
   - Guides:
-    - Adding accounts: guides/adding-accounts.md
+    - Adding account: guides/adding-account.md
     - Registering a device: guides/registering-device.md
     - Connecting to a device: guides/connecting-device.md

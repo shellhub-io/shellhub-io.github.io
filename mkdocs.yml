@@ -63,6 +63,12 @@ markdown_extensions:
   - pymdownx.tilde
   - attr_list
 
+# Plugins
+plugins:
+  - redirects:
+      redirect_maps:
+        'getting-started.md': 'installing.md'
+
 # Navigation
 nav:
   - What is ShellHub?: index.md

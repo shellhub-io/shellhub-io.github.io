@@ -79,3 +79,4 @@ nav:
     - Adding account: guides/adding-account.md
     - Registering a device: guides/registering-device.md
     - Connecting to a device: guides/connecting-device.md
+  - Troubleshooting: troubleshooting.md

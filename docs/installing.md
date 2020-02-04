@@ -39,9 +39,9 @@ docker-compose up -d
 
 !!! warning "Be patient, it can take up to 10 minutes for the first time"
 
-## Next steps
+When ShellHub server is up and running, you access the Web UI on [http://localhost](http://localhost).
 
-When ShellHub server is up and running, you need to follow this steps:
+## Next steps
 
 1. [Adding account](guides/adding-account.md) for creating the initial user
 2. [Registering a device](guides/registering-device.md) for registering your first device

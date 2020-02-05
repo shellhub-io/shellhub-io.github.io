@@ -68,6 +68,7 @@ plugins:
   - redirects:
       redirect_maps:
         'getting-started.md': 'installing.md'
+  - markdownextradata: {}
 
 # Navigation
 nav:
@@ -80,3 +81,8 @@ nav:
     - Registering a device: guides/registering-device.md
     - Connecting to a device: guides/connecting-device.md
   - Troubleshooting: troubleshooting.md
+
+# Extra data
+extra:
+  shellhub:
+    latest_version: v0.0.1

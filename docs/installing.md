@@ -16,11 +16,11 @@ and connects them together on a single machine.
 In a working directory, clone the ShellHub repository:
 
 ```
-git clone -b v0.0.1 https://github.com/shellhub-io/shellhub.git shellhub-v0.0.1
+git clone -b {{ shellhub.latest_version }} https://github.com/shellhub-io/shellhub.git shellhub-{{ shellhub.latest_version }}
 ```
 
 ```
-cd shellhub-v0.0.1
+cd shellhub-{{ shellhub.latest_version }}
 ```
 
 ## Generate keys

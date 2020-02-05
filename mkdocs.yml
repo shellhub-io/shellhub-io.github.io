@@ -65,6 +65,7 @@ markdown_extensions:
 
 # Plugins
 plugins:
+  - search
   - redirects:
       redirect_maps:
         'getting-started.md': 'installing.md'

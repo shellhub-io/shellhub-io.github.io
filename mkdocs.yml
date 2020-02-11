@@ -82,6 +82,7 @@ nav:
     - Registering a device: guides/registering-device.md
     - Connecting to a device: guides/connecting-device.md
   - Troubleshooting: troubleshooting.md
+  - FAQ: faq.md
 
 # Extra data
 extra:

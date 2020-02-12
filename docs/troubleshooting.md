@@ -9,3 +9,13 @@ If you have getting the error message above when starting up the server using `d
 
 * Change the OpenSSH daemon port from 22 to whatever on your host machine;
 * Change the default SSH gateway port of ShellHub by setting `SHELLHUB_SSH_PORT` variable inside the configuration file.
+
+## cannot start service emq
+
+
+!!! error "Error message"
+	ERROR: for emq  Cannot start service emq: driver failed programming external connectivity on endpoint shellhub_emq_1 : Error starting userland proxy: listen tcp 0.0.0.0:18083: bind: address already in use
+
+If you have getting the error message above when starting up the server using `docker-compose` you have the following option to solve this issue:
+
+* Change the VirtualBox webservice daemon default port on your host machine

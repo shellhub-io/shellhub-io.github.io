@@ -1,5 +1,7 @@
 The web interface requires you log in with a valid username and password.
 
+!!! warning "Before continuing, make sure you have installed uuidgen"
+
 To add a account ser you must run the `add-user` script from the ShellHub working directory:
 
 ```

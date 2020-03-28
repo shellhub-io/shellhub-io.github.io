@@ -12,7 +12,7 @@ If you have getting the error message above when starting up the server using `d
 
 ## Cannot start gateway
 
-!!! error "Erro message"
+!!! error "Error message"
     ERROR: for gateway  Cannot start service gateway: driver failed programming external connectivity on endpoint shellhub_gateway_1: Error starting userland proxy: listen tcp 0.0.0.0:80: listen: address already in use
 
 If you get the error message above, then check you have no other running process using the port 80 with the following command:

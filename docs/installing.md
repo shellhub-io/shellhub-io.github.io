@@ -5,6 +5,8 @@ run ShellHub.
     If you are looking for instructions on how to set up ShellHub for
     your device fleet on your cloud infrastructure the same steps apply.
 
+A hosted version of ShellHub is available at https://shellhub.io/.
+
 ShellHub is designed using the microservices design pattern, so that multiple small 
 and isolated services collaborate to provide the server.
 In order to make it easier to test ShellHub and its features, we have created

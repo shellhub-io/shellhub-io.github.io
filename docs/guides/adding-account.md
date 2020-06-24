@@ -5,7 +5,7 @@ The web interface requires you log in with a valid username and password.
 To add a user account, you must run the `add-user` script from the ShellHub working directory:
 
 ```
-./bin/add-user <username> <password>
+./bin/add-user <username> <password> <email>
 ```
 
 In ShellHub, each account manage their own fleet of devices. Thus, devices

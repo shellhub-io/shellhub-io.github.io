@@ -1,4 +1,6 @@
-If you're having trouble with ShellHub, here are some fixes you can try:
+In case you're experiencing problems with using ShellHub, here is a list
+of solutions to some frequently encountered issues. If this page doesn't
+help you solve your problem, try doing a search on [GitHub Issues](https://github.com/shellhub-io/shellhub/issues).
 
 ## Cannot start service ssh
 

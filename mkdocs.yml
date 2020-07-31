@@ -19,8 +19,8 @@ edit_uri: '/shellhub-io/shellhub-io.github.io/edit/src/docs'
 # Theme
 theme:
   name: 'material'
-  feature:
-    tabs: false
+  features:
+    - tabs
   logo: img/logo-inverted.png
 
 # Customization
@@ -77,18 +77,18 @@ plugins:
 
 # Navigation
 nav:
-  - What is ShellHub?: index.md
-  - Overview: introduction.md
+  - Introduction: index.md
+  - How it Works: introduction.md
+  - Features: features.md
   - Getting started:
-    - Installing: installing.md
-  - Guides:
-    - Adding account: guides/adding-account.md
-    - Registering a device: guides/registering-device.md
-    - Connecting to a device: guides/connecting-device.md
-    - Managing Firewall Rules: guides/managing-firewall-rules.md
-  - Troubleshooting: troubleshooting.md
-  - FAQ: faq.md
-
+    - Installing: getting-started/installing.md
+    - Creating account: getting-started/creating-account.md
+    - Registering a device: getting-started/registering-device.md
+    - Connecting to a device: getting-started/connecting-device.md
+  - ShellHub Cloud:
+    - Firewall Rules: cloud/managing-firewall-rules.md
+  - Troubleshooting:
+      Frequently Encountered Issues: troubleshooting.md
 # Extra data
 extra:
   shellhub:

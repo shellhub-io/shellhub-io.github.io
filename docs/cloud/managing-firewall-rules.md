@@ -1,3 +1,6 @@
+!!! info "NOTE"
+	This feature is only available in [ShellHub Cloud](https://shellhub.io).
+
 ShellHub provides flexible firewall for filtering SSH connections.
 It gives a fine-grained control over which SSH connections reach the devices.
 

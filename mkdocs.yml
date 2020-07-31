@@ -21,6 +21,7 @@ theme:
   name: 'material'
   feature:
     tabs: false
+  logo: img/logo-inverted.png
 
 # Customization
 extra:

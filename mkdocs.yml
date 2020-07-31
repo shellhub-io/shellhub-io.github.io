@@ -79,7 +79,6 @@ plugins:
 nav:
   - Introduction: index.md
   - How it Works: introduction.md
-  - Features: features.md
   - Getting started:
     - Installing: getting-started/installing.md
     - Creating account: getting-started/creating-account.md

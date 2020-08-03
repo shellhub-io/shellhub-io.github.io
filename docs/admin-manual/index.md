@@ -1,0 +1,4 @@
+This manual covers the installation, configuration and management of a self-hosted ShellHub instance.
+
+!!! info ""
+	This manual requires you to have a good understanding of Linux and Docker

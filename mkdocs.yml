@@ -87,6 +87,12 @@ nav:
   - ShellHub Cloud:
     - Introduction: cloud/index.md
     - Firewall Rules: cloud/managing-firewall-rules.md
+  - Admin Manual:
+      - Introduction: admin-manual/index.md
+      - Installing: admin-manual/installing.md
+      - Configuring: admin-manual/configuring.md
+      - Running: admin-manual/running.md
+      - Managing: admin-manual/managing.md
   - Troubleshooting:
       Frequently Encountered Issues: troubleshooting.md
 # Extra data

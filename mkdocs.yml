@@ -85,6 +85,7 @@ nav:
     - Registering a device: getting-started/registering-device.md
     - Connecting to a device: getting-started/connecting-device.md
   - ShellHub Cloud:
+    - Introduction: cloud/index.md
     - Firewall Rules: cloud/managing-firewall-rules.md
   - Troubleshooting:
       Frequently Encountered Issues: troubleshooting.md

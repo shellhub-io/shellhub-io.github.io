@@ -93,6 +93,7 @@ nav:
       - Configuring: admin-manual/configuring.md
       - Running: admin-manual/running.md
       - Managing: admin-manual/managing.md
+      - Production Deployment: admin-manual/production-deployment.md
   - Troubleshooting:
       Frequently Encountered Issues: troubleshooting.md
 # Extra data

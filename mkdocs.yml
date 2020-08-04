@@ -86,6 +86,7 @@ nav:
     - Connecting to a device: getting-started/connecting-device.md
   - ShellHub Cloud:
     - Introduction: cloud/index.md
+    - Security: cloud/security.md
     - Firewall Rules: cloud/managing-firewall-rules.md
   - Admin Manual:
       - Introduction: admin-manual/index.md

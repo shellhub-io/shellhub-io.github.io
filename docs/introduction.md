@@ -2,12 +2,14 @@ This introduction section is intended to give a high-level overview of the Shell
 
 ![Diagram](img/diagram.png)
 
+<center>*[Click here](img/diagram.png)* to view large image</center>
+
 There are few basic concepts that are important to understand the ShellHub.
 Those basic concepts are detailed below:
 
-## SSH gateway
+## SSH Gateway
 
-The SSH gateway is a modern SSH server which forward connections to the devices
+The SSH gateway is a SSH server which forward connections to the devices
 running ShellHub's agent.
 
 ## Device
@@ -23,12 +25,12 @@ ShellHub's agent which must be installed on the device.
 SSHID is a unique address to identify a device in the SSH gateway, which must
 be specified in the following format:
 
-    <NAMESPACE>.<DEVICE_NAME>@<GATEWAY_ADDRESS>
+    <NAMESPACE>.<HOSTNAME>@<SERVER_ADDRESS>
 
 Where:
 
 * `<NAMESPACE>`: Is the account namespace identifier
-* `<DEVICE_NAME>`: Is the device name identifier
-* `<GATEWAY_ADDRESS>`: Is the gateway address identifier
+* `<HOSTNAME>`: Is the device hostname identifier
+* `<SERVER_ADDRESS>`: Is the ShellHub server instance address identifier
 
-!!! info "Example of SSHID: `lab.rasp-1@localhost`"
+!!! info "Example of SSHID: `demo.device-1@cloud.shellhub.io`"

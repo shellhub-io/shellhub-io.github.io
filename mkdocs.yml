@@ -72,7 +72,10 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        'getting-started.md': 'installing.md'
+        'getting-started.md': 'http://docs.shellhub.io/getting-started/installing/'
+        'guides/connecting-device.md': 'http://docs.shellhub.io/getting-started/connecting-device/'
+        'guides/registering-device.md': 'http://docs.shellhub.io/getting-started/registering-device/'
+        'guides/adding-account.md': 'http://docs.shellhub.io/getting-started/creating-account/'
   - markdownextradata: {}
 
 # Navigation

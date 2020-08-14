@@ -34,3 +34,13 @@ And disable it from autostart:
 ```
 sudo update-rc.d apache2 disable
 ```
+
+## My SSHID keeps changing every boot when using Ethernet over USB
+
+One common reason for this to happen is when using Ethernet over USB. This happens automatically on Raspberry Pi OS for example as the Raspberry Pi Zero has no Ethernet hardware, so there is no hard-coded Ethernet MAC address.
+
+An workaround for the issue is to use the last MAC as a static one. This can be done using following code:
+
+```
+echo 'options g_ether host_addr='$(dmesg | awk '/: HOST MAC/{print $NF}')' dev_addr='$(dmesg | awk '/: MAC/{print $NF}') | sudo tee /etc/modprobe.d/g_ether.conf
+```

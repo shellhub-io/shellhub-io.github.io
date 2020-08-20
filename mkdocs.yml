@@ -98,6 +98,9 @@ nav:
       - Running: admin-manual/running.md
       - Managing: admin-manual/managing.md
       - Production Deployment: admin-manual/production-deployment.md
+  - User Manual:
+      - Introduction: user-manual/index.md
+      - Installing: user-manual/installing.md
   - Troubleshooting:
       Frequently Encountered Issues: troubleshooting.md
 # Extra data

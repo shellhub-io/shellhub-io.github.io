@@ -17,8 +17,7 @@ Default: 22
 
 ### :arrow_right: `SHELLHUB_PROXY`
 
-Set this variable to `true` if you are running a reverse proxy or a load balancer
-in front of ShellHub.
+Set this variable to `true` if you are running a Layer 4 load balancer with proxy protocol in front of ShellHub.
 
 !!! danger ""
 	This option is required when running ShellHub in production with SSL enabled.

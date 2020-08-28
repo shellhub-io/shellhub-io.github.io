@@ -47,4 +47,4 @@ services:
 This is commonly achieved by running Nginx with your certificates on your
 Docker host, service or load balancers in-front of the running container.
 
-!!! info "Don't forget to set `SHELLHUB_PROXY=true` environment when putting a proxy in-front of ShellHub."
+!!! info "Don't forget to set [`SHELLHUB_PROXY`](/admin-manual/configuring/#shellhub_proxy) environment when putting a Layer 4 load balancer with proxy protocol in-front of ShellHub."

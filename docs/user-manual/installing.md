@@ -1,7 +1,13 @@
-The best way to install ShellHub Agent is with our automatic one-line installation script, which works with all Linux distributions that have Docker installed and properly set up.
-If you want to install ShellHub without Docker you can try to [install from source code](#installing-from-source-code) or if you are targeting embedded devices checkout our [Yocto Project support layer for ShellHub](https://github.com/shellhub-io/meta-shellhub).
+We offer different ways to install the ShellHub Agent. The easiest way is with our [one-line installation script](#using-the-one-line-installation-script), which works with all major Linux distributions but it requires that you have Docker installed and properly set up.
 
-## One-line installation script
+If you want to install ShellHub Agent but would like to not use Docker, currently we have two other options:
+
+1. [Install the ShellHub Agent from the source code](#installing-from-the-source-code),
+1. [Integrate the ShellHub Agent into an existing Yocto Project image](#integrate-with-an-existing-yocto-project-image)
+
+In next sessions we'll cover each of these alternatives.
+
+## Using the One-line installation script
 
 !!! info "Prerequisites"
 	Docker installed and properly set up on device is required.
@@ -12,17 +18,10 @@ Open the ShellHub UI, navigate to _Devices_ on the sidebar, and click on _ADD DE
 
 ![Device Register](/img/register-device.png)
 
-After running the command on your device, you'll need to accept the device on the ShellHub UI in order to complete enrollment.
-Go to _Devices_ -> _Pending_ locate your device and click _Accept_ button.
-
-After your device is enrolled, it becomes available in _Device List_ page.
-
-## Installing from source code
+## Installing from the source code
 
 !!! info "Prerequisites"
 	ShellHub Agent requires Go 1.14 to compile, please refer to the [official documentation](https://golang.org/doc/install) for how to install Go in your system.
-
-### Checkout source code
 
 First checkout the latest stable version (*{{ shellhub.latest_version }}*) of ShellHub as follows: 
 
@@ -30,9 +29,7 @@ First checkout the latest stable version (*{{ shellhub.latest_version }}*) of Sh
 git clone -b {{ shellhub.latest_version }} https://github.com/shellhub-io/shellhub.git shellhub
 ```
 
-### Building
-
-Execute the following command to build ShellHub Agent:
+Next, we need to execute the following command to build ShellHub Agent:
 
 ```
 cd shellhub/agent
@@ -40,3 +37,30 @@ go build
 ```
 
 Use `file ./agent` to check if executable was built.
+
+## Integrate with an existing Yocto Project image
+
+To use ShellHub in a Yocto Project image is necessary to add [meta-shellhub](https://github.com/shellhub-io/meta-shellhub) layer in your project.
+
+```
+git clone git@github.com:shellhub-io/meta-shellhub.git
+```
+
+!!! info ""
+	ShellHub have support to Dunfell(master), [Zeus](https://github.com/shellhub-io/meta-shellhub/tree/zeus), [Sumo](https://github.com/shellhub-io/meta-shellhub/tree/sumo) and [Rocko](https://github.com/shellhub-io/meta-shellhub/tree/rocko) branches.
+
+Besides that, add the settings below in your local.conf file:
+
+```
+CORE_IMAGE_EXTRA_INSTALL += "packagegroup-shellhub-runtime"
+SHELLHUB_TENANT_ID = "<your tenant id here>"
+```
+
+`CORE_IMAGE_EXTRA_INSTALL`: this variable will install the ShellHub agent in your device.
+
+`SHELLHUB_TENANT_ID`: needs to be filled with your *tenant code* available in the ShellHub platform at the top right in icon with the user name.
+
+Remember to add the other configurations according to your needs. After this, just generate the desired image.
+
+!!! attention ""
+	Stay tuned to the fact that ShellHub demands the use of a password in the device will use ShellHub.

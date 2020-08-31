@@ -101,6 +101,7 @@ nav:
   - User Manual:
       - Introduction: user-manual/index.md
       - Installing: user-manual/installing.md
+      - How to adding a device: user-manual/adding-device.md
   - Troubleshooting:
       Frequently Encountered Issues: troubleshooting.md
 # Extra data

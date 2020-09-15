@@ -1,5 +1,5 @@
 ShellHub is easy to configure, all configuration is done via environment
-variables inside the `.env` file located at the root of ShellHub project dir.
+variables inside the `.env.override` file located at the root of ShellHub project dir.
 
 ## Environment Variables
 

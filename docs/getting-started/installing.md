@@ -46,7 +46,7 @@ It is required to generate a key pair (private and public) for your ShellHub ser
 ## Running
 
 ```
-docker-compose up -d
+./bin/docker-compose up -d
 ```
 
 !!! warning "Be patient, it can take up to 10 minutes for the first time"

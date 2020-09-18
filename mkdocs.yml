@@ -97,6 +97,7 @@ nav:
       - Configuring: admin-manual/configuring.md
       - Running: admin-manual/running.md
       - Managing: admin-manual/managing.md
+      - Updating: admin-manual/updating.md
       - Production Deployment: admin-manual/production-deployment.md
   - User Manual:
       - Introduction: user-manual/index.md

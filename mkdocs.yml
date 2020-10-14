@@ -104,7 +104,8 @@ nav:
       - Installing: user-manual/installing.md
       - How to adding a device: user-manual/adding-device.md
   - Troubleshooting:
-      Frequently Encountered Issues: troubleshooting.md
+      Troubleshooting: troubleshooting/index.md
+      Frequently Encountered Issues: troubleshooting/faq.md
 # Extra data
 extra:
   shellhub:

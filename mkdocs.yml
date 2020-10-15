@@ -20,7 +20,7 @@ edit_uri: '/shellhub-io/shellhub-io.github.io/edit/src/docs'
 theme:
   name: 'material'
   features:
-    - tabs
+    - navigation.tabs
   logo: img/logo-inverted.png
 
 # Customization

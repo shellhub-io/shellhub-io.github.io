@@ -87,10 +87,6 @@ nav:
     - Creating account: getting-started/creating-account.md
     - Registering a device: getting-started/registering-device.md
     - Connecting to a device: getting-started/connecting-device.md
-  - ShellHub Cloud:
-    - Introduction: cloud/index.md
-    - Security: cloud/security.md
-    - Firewall Rules: cloud/managing-firewall-rules.md
   - Admin Manual:
       - Introduction: admin-manual/index.md
       - Installing: admin-manual/installing.md
@@ -103,6 +99,10 @@ nav:
       - Introduction: user-manual/index.md
       - Installing: user-manual/installing.md
       - How to adding a device: user-manual/adding-device.md
+      - Managing Firewall Rules: user-manual/managing-firewall-rules.md
+  - ShellHub Cloud:
+    - Introduction: cloud/index.md
+    - Security: cloud/security.md
   - Troubleshooting:
       Troubleshooting: troubleshooting/index.md
       Frequently Encountered Issues: troubleshooting/faq.md

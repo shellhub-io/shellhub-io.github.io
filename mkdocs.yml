@@ -97,12 +97,14 @@ nav:
       - Production Deployment: admin-manual/production-deployment.md
   - User Manual:
       - Introduction: user-manual/index.md
-      - Installing: user-manual/installing.md
       - How to adding a device: user-manual/adding-device.md
       - Managing Firewall Rules: user-manual/managing-firewall-rules.md
   - ShellHub Cloud:
     - Introduction: cloud/index.md
     - Security: cloud/security.md
+  - Reference:
+    - Agent:
+        - Installing: reference/agent/installing.md
   - Troubleshooting:
       Troubleshooting: troubleshooting/index.md
       Frequently Encountered Issues: troubleshooting/faq.md

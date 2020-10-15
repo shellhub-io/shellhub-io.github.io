@@ -105,9 +105,9 @@ nav:
   - Reference:
     - Agent:
         - Installing: reference/agent/installing.md
-  - Troubleshooting:
-      Troubleshooting: troubleshooting/index.md
-      Frequently Encountered Issues: troubleshooting/faq.md
+  - Support:
+      Troubleshooting: support/troubleshooting.md
+      Frequently Encountered Issues: support/faq.md
 # Extra data
 extra:
   shellhub:

@@ -4,3 +4,4 @@ Besides the ease of setup and maintenance, ShellHUb Cloud  offers a bunch of add
 
 * Firewall for filtering SSH connections
 * SSL traffic encryption
+* SSH session recording and playback

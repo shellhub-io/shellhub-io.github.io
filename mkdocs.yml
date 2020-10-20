@@ -34,6 +34,9 @@ extra:
     - type: 'linkedin'
       link: 'https://www.linkedin.com/company/ossystems'
 
+extra_css:
+  - 'stylesheets/extra.css'
+
 # Extensions
 markdown_extensions:
   - markdown.extensions.admonition

@@ -98,6 +98,7 @@ nav:
       - Managing: admin-manual/managing.md
       - Updating: admin-manual/updating.md
       - Production Deployment: admin-manual/production-deployment.md
+      - Admin Console: admin-manual/admin-console.md
   - User Manual:
       - Introduction: user-manual/index.md
       - How to adding a device: user-manual/adding-device.md

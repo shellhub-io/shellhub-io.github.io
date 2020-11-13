@@ -97,6 +97,7 @@ nav:
       - Running: admin-manual/running.md
       - Managing: admin-manual/managing.md
       - Updating: admin-manual/updating.md
+      - Upgrade to Enterprise: admin-manual/upgrade-enterprise.md
       - Production Deployment: admin-manual/production-deployment.md
       - Admin Console: admin-manual/admin-console.md
   - User Manual:

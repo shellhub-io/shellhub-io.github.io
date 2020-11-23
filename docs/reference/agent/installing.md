@@ -45,7 +45,7 @@ Next, we need to execute the following command to build ShellHub Agent:
 
 ```
 cd shellhub/agent
-go build
+go build -ldflags "-X main.AgentVersion={{ shellhub.latest_version }}"
 ```
 
 Use `file ./agent` to check if executable was built.

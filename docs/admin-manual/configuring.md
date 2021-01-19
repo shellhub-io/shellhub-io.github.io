@@ -9,6 +9,12 @@ The HTTP listen port for the ShellHub web-based GUI, API and Reverse SSH tunnel.
 
 Default: 80
 
+### :arrow_right: `SHELLHUB_HTTPS_PORT`
+
+The HTTPS listen port for the ShellHub web-based GUI, API and Reverse SSH tunnel.
+
+Default: 443
+
 ### :arrow_right: `SHELLHUB_SSH_PORT`
 
 The SSH listen port for incoming SSH connections to devices.
@@ -19,7 +25,28 @@ Default: 22
 
 Set this variable to `true` if you are running a Layer 4 load balancer with proxy protocol in front of ShellHub.
 
-!!! danger ""
-	This option is required when running ShellHub in production with SSL enabled.
+Default: false
+
+### :arrow_right: `SHELLHUB_AUTO_SSL`
+
+Automatic HTTPS with Let's Encrypt
 
 Default: false
+
+### :arrow_right: `SHELLHUB_REDIRECT_TO_HTTPS`
+
+Redirect requests from HTTP port to HTTPS port
+
+!!! info ""
+	In order to enable HTTPS redirection, you need to have HTTPS enabled
+
+Default: true
+
+### :arrow_right: `SHELLHUB_DOMAIN`
+
+Domain of the server
+
+!!! info ""
+	Only required if automatic HTTPS is enabled
+
+Default: localhost

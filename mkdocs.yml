@@ -88,6 +88,7 @@ nav:
   - Getting started:
     - Installing: getting-started/installing.md
     - Creating account: getting-started/creating-account.md
+    - Creating namespace: getting-started/creating-namespace.md
     - Registering a device: getting-started/registering-device.md
     - Connecting to a device: getting-started/connecting-device.md
   - Admin Manual:

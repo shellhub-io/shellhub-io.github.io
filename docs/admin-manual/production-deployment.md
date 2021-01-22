@@ -1,3 +1,5 @@
+!!! danger "When running in production you should ensure that you [enable SSL](#enable-ssl)"
+
 For production deployment, there are a few things to modified to make sure
 your deployment is ready for production usage.
 
@@ -42,15 +44,20 @@ services:
 
 ## Enable SSL
 
-!!! danger "When running in production you should ensure that you enable SSL"
-
-This is commonly achieved by running Nginx with your certificates on your
+This is commonly achieved by running NGINX with your certificates on your
 Docker host, service or load balancers in-front of the running container.
-
 
 !!! info "Don't forget to set [`SHELLHUB_PROXY`](/admin-manual/configuring/#shellhub_proxy) environment when putting a Layer 4 load balancer with proxy protocol in-front of ShellHub."
 
-In case you are using NGINX as SSL terminator instead, make sure to set the SHELLHUB_WEB_PORT to only bind to localhost by adding the following line to the `docker-compose.override.yml`
+### Automatic HTTPS with Let's Encrypt
+
+ShellHub provides automatic HTTPS support using *Let's Encrypt*  with reasonable SSL settings, HTTP/2 and WebSockets support out-of-the-box.
+
+Please see [`SHELLHUB_AUTO_SSL`](/admin-manual/configuring/#shellhub_auto_ssl) config option.
+
+### NGINX SSL terminator
+
+In case you are using NGINX as SSL terminator instead, make sure to set the `SHELLHUB_WEB_PORT` to only bind to localhost by adding the following line to the `docker-compose.override.yml`
 
 ```yaml
 version: '3.7'
@@ -60,9 +67,10 @@ services:
        - "127.0.0.1:${SHELLHUB_HTTP_PORT}:80"
 ```
 
-## NGINX websocket configuration
+#### Configure NGINX to proxy Websocket connections
 
-When using NGINX do not forget to allow websocket traffic to be handled properly. This can be done by adding the following blocks to your nginx configuration
+When using NGINX do not forget to allow websocket traffic to be handled properly.
+This can be done by adding the following blocks to your nginx configuration.
 
 ```
 location /ws/ {
@@ -80,4 +88,4 @@ location /ssh/ {
      proxy_set_header Connection "upgrade";
      proxy_read_timeout 86400;
  }
- ```
+```

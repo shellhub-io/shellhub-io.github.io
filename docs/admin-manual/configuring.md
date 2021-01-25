@@ -40,7 +40,7 @@ Redirect requests from HTTP port to HTTPS port
 !!! info ""
 	In order to enable HTTPS redirection, you need to have HTTPS enabled
 
-Default: true
+Default: false
 
 ### :arrow_right: `SHELLHUB_DOMAIN`
 

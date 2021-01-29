@@ -111,6 +111,7 @@ nav:
     - Security: cloud/security.md
   - Reference:
     - Agent:
+        - Configuring: reference/agent/configuring.md
         - Installing: reference/agent/installing.md
   - Support:
       Troubleshooting: support/troubleshooting.md

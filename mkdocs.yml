@@ -105,6 +105,7 @@ nav:
       - Introduction: user-manual/index.md
       - How to adding a device: user-manual/adding-device.md
       - Managing Firewall Rules: user-manual/managing-firewall-rules.md
+      - Session Recording: user-manual/session-recording.md
   - ShellHub Cloud:
     - Introduction: cloud/index.md
     - Security: cloud/security.md

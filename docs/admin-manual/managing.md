@@ -1,9 +1,10 @@
 ShellHub comes with a useful scripts for managing a self-hosted ShellHub instance.
 These scripts are located in `bin` of ShellHub project dir.
 
-!!! danger ""
-	Please don't confuse these scripts of `bin` with the scripts inside `scripts`
-	dir which is used only for local development.
+!!! info "ShellHub Enterprise"
+
+	If you are managing a ShellHub Enterprise self-hosted instance,
+	all administrative tasks can be performed via the [Admin Console](/admin-manual/admin-console.md).
 
 Each script must be run from the root of ShellHub project dir.
 

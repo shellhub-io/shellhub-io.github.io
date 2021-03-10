@@ -30,6 +30,6 @@ cd shellhub
 It is required to generate a key pair (private and public) for your ShellHub server instance.
 
 ```
-./bin/keygen
+make keygen
 ```
 

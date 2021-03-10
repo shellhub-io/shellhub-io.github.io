@@ -40,13 +40,13 @@ cd shellhub
 It is required to generate a key pair (private and public) for your ShellHub server instance.
 
 ```
-./bin/keygen
+make keygen
 ```
 
 ## Running
 
 ```
-./bin/docker-compose up -d
+make start
 ```
 
 !!! warning "Be patient, it can take up to 10 minutes for the first time"

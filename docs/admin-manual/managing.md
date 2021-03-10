@@ -55,11 +55,3 @@ Delete user account from a local running instance of ShellHub.
 Reset user account password from a local running instance of ShellHub.
 
 <strong>Usage:</strong> `./bin/reset-user-password <username> <password>`
-
-### Key generation scripts
-
-#### :arrow_right: `keygen`
-
-Generate a key pair (private and public) for ShellHub self-hosted instance.
-
-<strong> Usage: </strong>`./bin/keygen`

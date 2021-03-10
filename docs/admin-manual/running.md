@@ -4,11 +4,10 @@ everything for you on a single host.
 !!! info ""
 	Running ShellHub in a multi-host environment with Kubernetes or Docker Swarm is beyond the scope of this guide.
 
-To run ShellHub you can just simply run the up command with docker-compose wrapper inside
-of ShellHub project dir:
+To run ShellHub you can just simply run the following command of ShellHub project dir:
 
 ```
-./bin/docker-compose up -d
+make start
 ```
 
 !!! warning "Be patient, it can take up to 10 minutes for the first time"

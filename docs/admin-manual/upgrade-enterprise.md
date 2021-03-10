@@ -39,6 +39,6 @@ Open the `.env.override` file inside ShellHub project dir and set the following 
 If ShellHub is up and running you need to restart containers by running:
 
 ```
-./bin/docker-compose stop
-./bin/docker-compose up -d
+make stop
+make start
 ```

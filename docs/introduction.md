@@ -1,6 +1,11 @@
+---
+hide:
+  - navigation
+---
+
 This introduction section is intended to give a high-level overview of the ShellHub.
 
-![Diagram](img/diagram.png)
+![Diagram](img/diagram.png){:.shadow}
 
 <center>*[Click here](img/diagram.png)* to view large image</center>
 

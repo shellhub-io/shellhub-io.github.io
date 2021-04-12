@@ -1,3 +1,9 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 ShellHub is a modern SSH server for remotely accessing Linux devices
 via command line (using any SSH client) or web-based user interface.
 It is intended to be used instead of _sshd_.
@@ -13,4 +19,4 @@ is behind a corporate firewall that does not allow SSH connections.
 ShellHub provides a way to avoid all these hassles, helping you easily and seamlessly access
 any Linux device behind firewall and NAT.
 
-![Screenshot](img/screenshot.png)
+![Screenshot](img/screenshot.png){:.shadow}

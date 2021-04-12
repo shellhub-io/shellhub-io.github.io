@@ -19,6 +19,8 @@ edit_uri: '/shellhub-io/shellhub-io.github.io/edit/src/docs'
 # Theme
 theme:
   name: 'material'
+  palette:
+    scheme: slate
   features:
     - navigation.tabs
   logo: img/logo-inverted.png

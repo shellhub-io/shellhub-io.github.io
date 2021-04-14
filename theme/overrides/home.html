@@ -1,0 +1,59 @@
+{% extends "main.html" %}
+
+<!-- Render hero under tabs -->
+{% block tabs %}
+  {{ super() }}
+
+  <!-- Additional styles for landing page -->
+<style>
+.tx-hero {
+  max-width: 700px;
+  display: flex;
+  padding: .4rem;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tx-hero h1 {
+  font-weight: 600;
+  font-size: 38px;
+  line-height: 46px;
+  color: #fff;
+  margin-top: 10vh;
+  margin-bottom: 0px;
+}
+
+.tx-hero p {
+  font-size: 20px;
+  line-height: 32px;
+}
+</style>
+  <!-- Hero for landing page -->
+  <div class="md-container tx-hero">
+    <div class="md-grid md-typeset">
+      <div class="md-main__innera">
+        <div>
+          <h1>Welcome to ShellHub Documentation</h1>
+          <p>
+            Here you will find information and resources to help you learn about Shellhub and its features. From getting started with connecting your first device to set up and manage your ShellHub instance.
+          </p>
+          <a
+            href="/getting-started/installing"
+            title="Getting Started"
+            class="md-button md-button--primary"
+          >
+            Getting Started
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+<!-- Content -->
+{% block content %}{% endblock %}
+
+<!-- Application footer -->
+{% block footer %}
+  {{ super() }}
+{% endblock %}

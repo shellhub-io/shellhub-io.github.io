@@ -19,8 +19,11 @@ edit_uri: '/shellhub-io/shellhub-io.github.io/edit/src/docs'
 # Theme
 theme:
   name: 'material'
+  custom_dir: 'theme'
   palette:
     scheme: slate
+  font:
+    text: Prompt
   features:
     - navigation.tabs
   logo: img/logo-inverted.png
@@ -85,8 +88,8 @@ plugins:
 
 # Navigation
 nav:
-  - Introduction: index.md
-  - How it Works: introduction.md
+  - Home: index.md
+  - Introduction: introduction.md
   - Getting started:
     - Installing: getting-started/installing.md
     - Creating account: getting-started/creating-account.md

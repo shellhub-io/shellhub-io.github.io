@@ -125,3 +125,7 @@ nav:
 extra:
   shellhub:
     latest_version: v0.6.4
+
+google_analytics:
+  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_ID"]
+  - auto

@@ -4,7 +4,7 @@ These scripts are located in `bin` of ShellHub project dir.
 !!! info "ShellHub Enterprise"
 
 	If you are managing a ShellHub Enterprise self-hosted instance,
-	all administrative tasks can be performed via the [Admin Console](/admin-manual/admin-console.md).
+	all administrative tasks can be performed via the [Admin Console](/admin-manual/admin-console/).
 
 Each script must be run from the root of ShellHub project dir.
 

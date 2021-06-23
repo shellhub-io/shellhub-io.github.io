@@ -1,0 +1,8 @@
+:root > * {
+    --md-primary-fg-color: #364576;
+    --md-typeset-a-color: rgb(171, 194, 207);
+}
+
+.shadow {
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.7);
+}

@@ -23,7 +23,7 @@ theme:
   palette:
     scheme: slate
   font:
-    text: Prompt
+    text: Prompt, sans-serif
   features:
     - navigation.tabs
   logo: img/logo-inverted.png

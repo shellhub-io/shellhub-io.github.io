@@ -26,6 +26,7 @@ theme:
     text: Prompt, sans-serif
   features:
     - navigation.tabs
+    - navigation.sections
   logo: img/logo-inverted.png
 
 # Customization
@@ -90,7 +91,7 @@ plugins:
 nav:
   - Home: index.md
   - Introduction: introduction.md
-  - Getting started:
+  - Getting Started:
     - Installing: getting-started/installing.md
     - Creating account: getting-started/creating-account.md
     - Creating namespace: getting-started/creating-namespace.md
@@ -108,16 +109,24 @@ nav:
       - Admin Console: admin-manual/admin-console.md
   - User Manual:
       - Introduction: user-manual/index.md
-      - How to adding a device: user-manual/adding-device.md
-      - Managing Firewall Rules: user-manual/managing-firewall-rules.md
-      - Session Recording: user-manual/session-recording.md
+      - Namespaces:
+        - Overview: user-manual/namespaces/overview.md
+        - Switching namespace: user-manual/namespaces/switching.md
+      - Devices:
+        - Listing devices: user-manual/devices/listing.md
+        - Adding a device: user-manual/devices/adding.md
+        - Connecting to a device: user-manual/devices/connecting.md
+      - Sessions:
+        - Auditing sessions: user-manual/sessions/introduction.md
+        - Replaying a recorded session: user-manual/sessions/replaying.md
+      - Firewall:
+        - Managing firewall rules: user-manual/security/managing-firewall-rules.md
+      - Advanced:
+        - Installing agent: user-manual/agent/installing.md
+        - Configuring: user-manual/agent/configuring.md
   - ShellHub Cloud:
     - Introduction: cloud/index.md
     - Security: cloud/security.md
-  - Reference:
-    - Agent:
-        - Configuring: reference/agent/configuring.md
-        - Installing: reference/agent/installing.md
   - Support:
       Troubleshooting: support/troubleshooting.md
       Frequently Encountered Issues: support/faq.md

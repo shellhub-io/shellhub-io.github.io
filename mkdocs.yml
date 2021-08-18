@@ -1,7 +1,7 @@
 # Project information
 site_name: ShellHub
 site_description: 'ShellHub enables teams to easily access any Linux device behind firewall and NAT'
-site_url: 'https://github.com/shellhub-io'
+site_url: 'https://docs.shellhub.io'
 
 # Repository
 repo_name: 'shellhub-io/shellhub'
@@ -119,7 +119,8 @@ nav:
       - Sessions:
         - Auditing sessions: user-manual/sessions/introduction.md
         - Replaying a recorded session: user-manual/sessions/replaying.md
-      - Firewall:
+      - Security:
+        - Authenticating SSH connections: user-manual/security/authenticating.md
         - Managing firewall rules: user-manual/security/managing-firewall-rules.md
       - Advanced:
         - Installing agent: user-manual/agent/installing.md
@@ -134,7 +135,6 @@ nav:
 extra:
   shellhub:
     latest_version: v0.7.3
-
-google_analytics:
-  - !!python/object/apply:os.getenv ["GOOGLE_ANALYTICS_ID"]
-  - auto
+  analytics:
+    provider: google
+    property: !ENV GOOGLE_ANALYTICS_ID

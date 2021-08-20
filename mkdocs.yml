@@ -120,7 +120,7 @@ nav:
         - Auditing sessions: user-manual/sessions/introduction.md
         - Replaying a recorded session: user-manual/sessions/replaying.md
       - Security:
-        - Authenticating SSH connections: user-manual/security/authenticating.md
+        - Using public keys for authentication: user-manual/security/publickey-authentication.md
         - Managing firewall rules: user-manual/security/managing-firewall-rules.md
       - Advanced:
         - Installing agent: user-manual/agent/installing.md

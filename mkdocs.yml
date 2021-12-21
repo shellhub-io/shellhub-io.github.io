@@ -134,7 +134,7 @@ nav:
 # Extra data
 extra:
   shellhub:
-    latest_version: v0.8.0
+    latest_version: v0.8.2
   analytics:
     provider: google
     property: !ENV GOOGLE_ANALYTICS_ID

@@ -1,0 +1,1808 @@
+openapi: 3.0.2
+paths:
+  /api/login:
+    post:
+      summary: Login
+      description: Retrieve JWT token what's need to access protected API's routes.
+      tags:
+        - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/login'
+      responses:
+        '200':
+          description: Success login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user_auth'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/auth/user:
+    post:
+      summary: Login
+      description: Retrieve JWT token what's need to access protected API's routes.
+      tags:
+        - user
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/login'
+      responses:
+        '200':
+          description: Success login
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user_auth'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices/auth:
+    post:
+      summary: Auth device
+      description: >
+        Authentic a device.
+
+        `X-Real-IP` header is used to set a geolocation position to device when
+        `geoip` feature is enable.
+
+        Every 30 seconds, this route is hit by internal ShellHub to check device
+        availability.
+      tags:
+        - device
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Real-IP
+          schema:
+            description: Device IP
+            type: string
+          in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uid:
+                  description: Device UID
+                  type: string
+                token:
+                  description: Device token
+                  type: string
+                name:
+                  description: Device name
+                  type: string
+                namespace:
+                  description: Device owner namespace
+                  type: string
+      responses:
+        '200':
+          description: Success get device
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  UID:
+                    description: Device UID
+                    type: string
+                  Token:
+                    description: Device token
+                    type: string
+                  Name:
+                    description: Device name
+                    type: string
+                  Namespace:
+                    description: Device owner namespace
+                    type: string
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/auth/device:
+    post:
+      summary: Auth device v2
+      description: >
+        Authentic a device.
+
+        `X-Real-IP` header is used to set a geolocation position to device when
+        `geoip` feature is enable.
+
+        Every 30 seconds, this route is hit by internal ShellHub to check if a 
+        device is online.
+      tags:
+        - device
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Real-IP
+          schema:
+            description: Device IP
+            type: string
+          in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                uid:
+                  description: Device UID
+                  type: string
+                token:
+                  description: Device token
+                  type: string
+                name:
+                  description: Device name
+                  type: string
+                namespace:
+                  description: Device owner namespace
+                  type: string
+      responses:
+        '200':
+          description: Success get auth device
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  UID:
+                    description: Device UID
+                    type: string
+                  Token:
+                    description: Device token
+                    type: string
+                  Name:
+                    description: Device name
+                    type: string
+                  Namespace:
+                    description: Device owner namespace
+                    type: string
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/auth/ssh:
+    post:
+      summary: Set SSH key
+      description: Set a SSH public key.
+      tags:
+        - ssh
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fingerprint:
+                  description: Device fingerprint
+                  type: string
+                data:
+                  description: Device SSH public key
+                  type: string
+      responses:
+        '200':
+          description: Success set SSH key
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  signature:
+                    description: Device signature
+                    type: string
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/auth/token/{tenant}:
+    get:
+      summary: Get a new namespace's token
+      description: >
+        This route works like a login's one; returns a JWT token and extra
+        information about namespace.
+
+        You can use this route to swap between namespaces.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      parameters:
+        - name: tenant
+          description: Namespace Tenant
+          schema:
+            type: string
+          in: path
+      responses:
+        '200':
+          description: Success to get namespace's token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user_auth'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/token/{tenant}:
+    get:
+      summary: Get token
+      description: Get a token from its tenant.
+      tags:
+        - user
+      security:
+        - Auth: []
+      parameters:
+        - name: tenant
+          description: Tenant
+          schema:
+            type: string
+          in: path
+      responses:
+        '200':
+          description: Success get token
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/user_auth'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices/{uid}/accept:
+    put:
+      summary: Accept device
+      description: Change device status to `accept`.
+      tags:
+        - device
+      security:
+        - Auth: []
+      parameters:
+        - name: uid
+          schema:
+            description: Device UID
+            type: string
+          in: path
+      responses:
+        '200':
+          description: Success accept device
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    description: Device accepted status
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/users/{id}/data:
+    patch:
+      summary: Update user data
+      description: Update all user information.
+      tags:
+        - user
+      security:
+        - Auth: []
+      parameters:
+        - name: id
+          description: User ID
+          schema:
+            type: string
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  description: User ID
+                  type: string
+                name:
+                  description: User name
+                  type: string
+                email:
+                  description: User e-mail
+                  type: string
+                username:
+                  description: User
+                  type: string
+                password:
+                  description: User password
+                  type: string
+                namespaces:
+                  description: User namespace
+                  type: integer
+                authenticated:
+                  description: User authentication state
+                  type: boolean
+                created_at:
+                  description: User creation date
+                  type: string
+                last_login:
+                  description: User last login date
+                  type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '400':
+          $ref: '#/components/responses/invalid_fields'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '409':
+          $ref: '#/components/responses/conflict_fields'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/users/{id}/password:
+    patch:
+      summary: Update user password
+      description: Update only the user password.
+      tags:
+        - user
+      security:
+        - Auth: []
+      parameters:
+        - name: id
+          description: User ID
+          schema:
+            type: string
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                current_password:
+                  description: User current password
+                  type: string
+                new_password:
+                  description: User new password
+                  type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/users/security/{id}:
+    put:
+      summary: Set session record
+      description: Define if sessions will be recorded.
+      tags:
+        - user
+        - session
+      security:
+        - Auth: []
+      parameters:
+        - name: id
+          description: User security ID
+          schema:
+            type: string
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                session_record:
+                  description: Session record
+                  type: boolean
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/users/security:
+    get:
+      summary: Get session record
+      description: Get status from if `session record` feature is enable.
+      tags:
+        - user
+        - session
+      security:
+        - Auth: []
+      responses:
+        '200':
+          description: Success get session record status
+          content:
+            application/json:
+              schema:
+                description: Session record status
+                type: boolean
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices:
+    get:
+      summary: Get device list
+      description: Get a list from all devices.
+      tags:
+        - device
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Total-Count
+          description: Device max returned number
+          schema:
+            type: string
+          in: header
+        - name: filter
+          description: Device filter
+          schema:
+            type: string
+          in: query
+        - name: page
+          description: Device page
+          schema:
+            type: integer
+          in: query
+        - name: per_page
+          description: Device number by page
+          schema:
+            type: integer
+          in: query
+        - name: status
+          description: Device status
+          schema:
+            type: string
+          in: query
+        - name: sort_by
+          description: Device sort
+          schema:
+            type: string
+          in: query
+        - name: order_by
+          schema:
+            description: Device list order
+            type: string
+          in: query
+      responses:
+        '200':
+          description: Success get device list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/device'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices/{uid}:
+    parameters:
+      - name: uid
+        schema:
+          description: Device UID
+          type: string
+        in: path
+    get:
+      summary: Get a device
+      description: Get a device from `UID`.
+      tags:
+        - device
+      security:
+        - Auth: []
+      responses:
+        '200':
+          description: Success get a device
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/device'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    delete:
+      summary: Delete a device
+      description: Delete a device from its `UID`.
+      tags:
+        - device
+      security:
+        - Auth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    patch:
+      summary: Update device name
+      description: Update a device name from its `UID` to `name` in request body.
+      tags:
+        - device
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: Device new name
+                  type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices/{uid}/{status}:
+    patch:
+      summary: Update device status
+      description: |
+        Update a device status from its allowed list.
+        The allowed status are:
+          - accept
+          - reject
+          - pending
+          - unused
+      tags:
+        - device
+      security:
+        - Auth: []
+      parameters:
+        - name: uid
+          description: Device UID
+          schema:
+            type: string
+          in: path
+        - name: status
+          schema:
+            type: string
+            enum:
+              - accept
+              - reject
+              - pending
+              - unused
+          in: path
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '402':
+          description: Payment required
+          content:
+            application/json:
+              schema:
+                type: null
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/sessions:
+    get:
+      summary: Get sessions list
+      description: Get a list from all opened session.
+      tags:
+        - session
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Total-Count
+          description: Session max returned number
+          schema:
+            type: integer
+          in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                page:
+                  description: Device list page
+                  type: string
+                per_page:
+                  description: Device number per page
+                  type: string
+      responses:
+        '200':
+          description: Success got session list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/session'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/sessions/{uid}:
+    parameters:
+      - name: uid
+        schema:
+          description: Session UID
+          type: string
+        in: path
+    get:
+      summary: Get session
+      description: >
+        Get session information from its `UID`.
+
+        `X-Real-IP` header is used to set a geolocation position to device when
+        `geoip` feature is enable.
+      tags:
+        - session
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/query'
+      responses:
+        '200':
+          description: Success get session
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/session'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    post:
+      summary: Set session authentication status
+      description: Set session authentication status.
+      tags:
+        - session
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                authenticated:
+                  description: Session authentication status
+                  type: boolean
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/sshkeys/public-keys:
+    get:
+      summary: Get public keys list
+      description: Get a list from all public keys.
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Total-Count
+          description: Public key max returned number
+          schema:
+            type: integer
+          in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/query'
+      responses:
+        '200':
+          description: Success get public key
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/public_key_hostname'
+                  - $ref: '#/components/schemas/public_key_tags'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    post:
+      summary: Create public key
+      description: Create a new public key.
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              oneOf:
+                - $ref: '#/components/schemas/public_key_hostname'
+                - $ref: '#/components/schemas/public_key_tags'
+      responses:
+        '200':
+          description: Success create public key
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/public_key_hostname'
+                  - $ref: '#/components/schemas/public_key_tags'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '422':
+          description: UnprocessableEntity
+          content:
+            application/json:
+              schema:
+                description: Invalid format
+                type: null
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/sshkeys/public-keys/{fingerprint}:
+    parameters:
+      - name: fingerprint
+        description: Public key fingerprint
+        schema:
+          type: string
+        in: path
+    patch:
+      summary: Update public key
+      description: Update public key.
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: Public key name
+                  type: string
+                username:
+                  description: Public key username
+                  type: string
+      responses:
+        '200':
+          description: Success update public key
+          content:
+            application/json:
+              schema:
+                oneOf:
+                  - $ref: '#/components/schemas/public_key_hostname'
+                  - $ref: '#/components/schemas/public_key_tags'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    delete:
+      summary: Delete public key
+      description: Delete public key.
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      responses:
+        '200':
+          description: Success delete public key
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/sshkeys/public-keys/{fingerprint}/tags:
+    parameters:
+      - name: fingerprint
+        description: Public key fingerprint
+        schema:
+          type: string
+        in: path
+        example: '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00'
+    post:
+      summary: Add a tag to public key
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tag:
+                  description: Tag's name
+                  type: string
+              example:
+                tag: tag1
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    put:
+      summary: Update all tags in a public key
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tags:
+                  description: List of tags
+                  type: array
+                  items:
+                    type: string
+                  example:
+                    - tag1
+                    - tag2
+                    - tag3
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/sshkeys/public-keys/{fingerprint}/tags/{name}:
+    parameters:
+      - name: fingerprint
+        description: Public key fingerprint
+        schema:
+          type: string
+        in: path
+        example: '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00'
+      - name: name
+        description: Tag's name
+        schema:
+          type: string
+        in: path
+        example: tag1
+    delete:
+      summary: Remove a tag from public key
+      description: Remove a tag from public key.
+      tags:
+        - ssh
+      security:
+        - Auth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/stats:
+    get:
+      summary: Get status from devices
+      description: >
+        Get states about active, pending, rejected, online and registered
+        devices"
+      tags:
+        - device
+      security:
+        - Auth: []
+      responses:
+        '200':
+          description: Success get stats from device
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  registered_devices:
+                    description: Registered devices
+                    type: integer
+                  online_devices:
+                    description: Online devices
+                    type: integer
+                  active_sessions:
+                    description: Active sessions
+                    type: integer
+                  pending_devices:
+                    description: Pending devices
+                    type: integer
+                  rejected_devices:
+                    description: Rejected devices
+                    type: integer
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/namespaces:
+    get:
+      summary: Get namespace list
+      description: Get a list from all namespaces.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Total-Count
+          schema:
+            description: Namespace max returned number
+            type: integer
+          in: header
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/query'
+      responses:
+        '200':
+          description: Success get namespace list
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    post:
+      summary: Create namespace
+      description: Create a namespace.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/namespace'
+      responses:
+        '200':
+          description: Success create namespace
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/namespaces/{tenant}:
+    parameters:
+      - name: tenant
+        description: Namespace Tenant
+        schema:
+          type: integer
+        in: path
+    get:
+      summary: Get namespace
+      description: Get a namespace from its `tenant`.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      responses:
+        '200':
+          description: Success get namespace
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    post:
+      summary: Create namespace
+      description: Create a namespace from its `tenant`.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: Namespace name
+                  type: string
+      responses:
+        '200':
+          description: Success create namespace
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    put:
+      summary: Edit namespace
+      description: Edit a namespace from its `tenant`.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: Namespace name
+                  type: string
+      responses:
+        '200':
+          description: Success edit namespace
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    delete:
+      summary: Delete namespace
+      description: Delete a namespace from its `tenant`.
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/namespaces/{tenant}/members:
+    post:
+      summary: Add a user to a namespace
+      description: Add a user to a namespace
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      parameters:
+        - name: tenant
+          description: Namespace Tenant
+          schema:
+            type: string
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                username:
+                  description: User name
+                  type: string
+                type:
+                  description: User type
+                  enum:
+                    - observer
+                    - operator
+                    - admin
+      responses:
+        '200':
+          description: Success add namespace to user
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/namespaces/{tenant}/members/{uid}:
+    delete:
+      summary: Delete a user from a namespace
+      description: Delete a user from a namespace
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      parameters:
+        - name: tenant
+          description: Namespace Tenant
+          schema:
+            type: string
+          in: path
+        - name: uid
+          description: User ID
+          schema:
+            type: string
+          in: path
+      requestBody:
+        content:
+          application/json: null
+      responses:
+        '200':
+          description: Success delete user from namespace
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/namespace'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    patch:
+      summary: Update a user from a namespace
+      description: Update a user type from a namespace
+      tags:
+        - namespace
+      security:
+        - Auth: []
+      parameters:
+        - name: tenant
+          description: Namespace Tenant
+          schema:
+            type: string
+          in: path
+        - name: uid
+          description: User ID
+          schema:
+            type: string
+          in: path
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                type:
+                  description: User type
+                  enum:
+                    - observer
+                    - operator
+                    - admin
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices/{uid}/tags:
+    parameters:
+      - name: uid
+        description: Device UID
+        schema:
+          type: string
+        in: header
+    post:
+      summary: Create a tag
+      description: Create a tag to a device
+      tags:
+        - device
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: Tag name
+                  type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '406':
+          $ref: '#/components/responses/not_acceptable'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    put:
+      summary: Update all tags
+      description: Update all tags from a device
+      tags:
+        - device
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                tags:
+                  description: List of tags
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '406':
+          $ref: '#/components/responses/not_acceptable'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/devices/{uid}/tags/{name}:
+    parameters:
+      - name: uid
+        description: Device UID
+        schema:
+          type: string
+        in: header
+      - name: name
+        description: Tag name
+        schema:
+          type: string
+        in: header
+    delete:
+      summary: Delete a tag
+      description: Delete a tag from a device
+      tags:
+        - device
+      security:
+        - Auth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/tags:
+    get:
+      summary: Get tags
+      tags:
+        - tags
+      security:
+        - Auth: []
+      parameters:
+        - name: X-Total-Count
+          schema:
+            description: tags max returned number
+            type: string
+          in: header
+      responses:
+        '200':
+          description: Success get tags
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+                example:
+                  - tag1
+                  - tag2
+                  - tag3
+                  - tag4
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+  /api/tags/{name}:
+    parameters:
+      - name: name
+        description: Tag name
+        schema:
+          type: string
+        in: path
+        example: tag1
+    put:
+      summary: Rename a tag name
+      tags:
+        - tags
+      security:
+        - Auth: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  description: New tag name
+                  type: string
+                  example: tag2
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '400':
+          $ref: '#/components/responses/bad_request'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+    delete:
+      summary: Delete a tag name
+      tags:
+        - tags
+      security:
+        - Auth: []
+      responses:
+        '200':
+          $ref: '#/components/responses/ok'
+        '401':
+          $ref: '#/components/responses/unauthorized'
+        '403':
+          $ref: '#/components/responses/forbidden'
+        '404':
+          $ref: '#/components/responses/not_found'
+        '500':
+          $ref: '#/components/responses/any_internal_error'
+info:
+  title: ShellHub
+  description: Shellhub's API documentation
+  contact:
+    email: contato@ossystems.com.br
+  license:
+    name: Apache License 2.0
+    url: https://github.com/shellhub-io/shellhub/blob/master/LICENSE.md
+  version: 1.0.0
+servers:
+  - url: http://localhost:80
+components:
+  securitySchemes:
+    Auth:
+      name: JWT
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    login:
+      type: object
+      properties:
+        username:
+          description: Login username
+          type: string
+        password:
+          description: Login password
+          type: string
+    user_auth:
+      type: object
+      properties:
+        token:
+          description: JWT's Token
+          type: string
+        user:
+          description: User
+          type: string
+        name:
+          description: Name
+          type: string
+        id:
+          description: User's ID
+          type: string
+        tenant:
+          description: Namespace's Tenant
+          type: string
+        type:
+          description: User's Type
+          type: string
+        email:
+          description: User's E-mail
+          type: string
+    device:
+      type: object
+      properties:
+        uid:
+          description: Device UID
+          type: string
+        name:
+          description: Device name
+          type: string
+        identity:
+          description: Device identity
+          type: object
+          properties:
+            mac:
+              description: Device MAC
+              type: string
+        info:
+          description: Device info
+          type: object
+          properties:
+            id:
+              description: Device ID
+              type: string
+            pretty_name:
+              description: Device OS pretty name
+              type: string
+            version:
+              description: Device OS version
+              type: string
+            arch:
+              description: Device OS arch
+              type: string
+            platform:
+              description: Device OS platform
+              type: string
+        public_key:
+          description: Device public key
+          type: string
+        tenant_id:
+          description: Device tenant
+          type: string
+        last_seen:
+          description: Device last seen
+          type: string
+        online:
+          description: Device availability status
+          type: boolean
+        namespace:
+          description: Device namespace
+          type: string
+        status:
+          description: Device status
+          type: string
+        created_at:
+          description: Device creation date
+          type: string
+        remote_addr:
+          description: Device remote address
+          type: string
+        position:
+          description: Device geolocation position
+          type: object
+          properties:
+            longitude:
+              description: Device longitude position
+              type: integer
+            latitude:
+              description: Device latitude position
+              type: integer
+    session:
+      type: object
+      properties:
+        uid:
+          description: Session UID
+          type: string
+        device_uid:
+          description: Session device UID
+          type: object
+          properties:
+            claims:
+              type: string
+        device:
+          $ref: '#/components/schemas/device'
+        tenant_id:
+          description: Session tenant ID
+          type: string
+        username:
+          description: Session username
+          type: string
+        ip_address:
+          description: Session IP address
+          type: string
+        started_at:
+          description: Session started date
+          type: string
+        last_seen:
+          description: Session last seen date
+          type: string
+        active:
+          description: Session active status
+          type: boolean
+        '-':
+          description: Session closed status
+          type: boolean
+        authenticated:
+          description: Session authenticated status
+          type: boolean
+        recorded:
+          description: Session record status
+          type: boolean
+    query:
+      type: object
+      properties:
+        page:
+          description: Device list page
+          type: integer
+        per_page:
+          description: Device number per page
+          type: integer
+    public_key_hostname:
+      type: object
+      properties:
+        data:
+          description: Public key  data
+          type: string
+        fingerprint:
+          description: Public key  fingerprint
+          type: string
+        created_at:
+          description: Public key creation date
+          type: string
+        tenant_id:
+          description: Public key tenant
+          type: string
+        name:
+          description: Public key name
+          type: string
+        filter:
+          description: Public key filter rule
+          type: object
+          properties:
+            hostname:
+              description: Public key hostname
+              type: string
+        username:
+          description: Public key username
+          type: string
+      example:
+        data: >-
+          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        fingerprint: '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00'
+        tenant_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+        name: name
+        filter:
+          hostname: .*
+        username: .*
+    public_key_tags:
+      type: object
+      properties:
+        data:
+          description: Public key  data
+          type: string
+        fingerprint:
+          description: Public key  fingerprint
+          type: string
+        created_at:
+          description: Public key creation date
+          type: string
+        tenant_id:
+          description: Public key tenant
+          type: string
+        name:
+          description: Public key name
+          type: string
+        filter:
+          description: Public key filter rule
+          type: object
+          properties:
+            tags:
+              description: Public key tags
+              type: array
+              items:
+                type: string
+        username:
+          description: Public key username
+          type: string
+      example:
+        data: >-
+          AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        fingerprint: '00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00'
+        tenant_id: xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+        name: name
+        filter:
+          tags:
+            - tag1
+            - tag2
+            - tag3
+        username: .*
+    namespace:
+      type: object
+      properties:
+        name:
+          description: Namespace name
+          type: string
+        owner:
+          description: Namespace owner
+          type: string
+        tenant_id:
+          description: Namespace tenant ID
+          type: string
+        members:
+          description: Namespace members
+          type: array
+          items:
+            type: object
+            properties:
+              id:
+                required: true
+                description: User ID
+                type: string
+              username:
+                description: User name
+                type: string
+              type:
+                required: true
+                description: User Type
+                enum:
+                  - observer
+                  - operator
+                  - admin
+                  - owner
+        settings:
+          description: Namespace settings
+          type: object
+          properties:
+            session_record:
+              description: Namespace session record
+              type: boolean
+        devices:
+          description: Namespace device number
+          type: integer
+        session:
+          description: Namespace opened session
+          type: integer
+        max_devices:
+          description: Namespace max device numbers
+          type: integer
+        device_count:
+          description: Namespace device count number
+          type: integer
+        created_at:
+          description: Namespace creation date
+          type: string
+        billing:
+          description: Namespace  billing
+          type: string
+  responses:
+    unauthorized:
+      description: Unauthorized
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Unauthorized
+                example: missing or malformated jwt
+    forbidden:
+      description: Forbidden
+    any_internal_error:
+      description: Internal error
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              message:
+                type: string
+                description: Internal error
+    ok:
+      description: Success Empty body
+    invalid_fields:
+      description: Invalid Fields
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+    conflict_fields:
+      description: Conflict Fields
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              type: string
+    bad_request:
+      description: Bad request
+    conflict:
+      description: Conflict
+    not_found:
+      description: Not found
+    not_acceptable:
+      description: Not Acceptable

@@ -29,7 +29,9 @@ ssh <USER>@<SSHID>
 !!! note ""
     Make sure to replace `<USER>` with the existing user on the device's operating system and
     `<SSHID>` with the SSHID copied before.
-
+!!! warning ""
+    `<SSHID>` is composed of `<device name>@<server address>`. The server address has an additional @, characteristic of ShellHub syntax.
+    
 ### PuTTY GUI SSH client
 
 Connecting to your device using a GUI SSH client also requires its `SSHID` address.

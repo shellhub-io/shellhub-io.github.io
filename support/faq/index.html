@@ -1,0 +1,1815 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="ShellHub enables teams to easily access any Linux device behind firewall and NAT">
+      
+      
+      
+        <link rel="canonical" href="https://shellhub-io.github.io/support/faq/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.4.1">
+    
+    
+      
+        <title>Frequently Encountered Issues - ShellHub</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.69437709.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/610d71dbd6e7610a49aef6e3/1fce89gm5';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt,+sans-serif:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Prompt, sans-serif";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+
+  <script id="__analytics">function __md_analytics(){window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-168888230-2","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){if(document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),document.forms.feedback){var e,a=document.forms.feedback;for(e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");ga("send","event","feedback","click",t,e),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})});var e=document.createElement("script");e.async=!0,e.src="https://www.google-analytics.com/analytics.js",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
+
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="slate" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#frequentely-asked-questions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="ShellHub" class="md-header__button md-logo" aria-label="ShellHub" data-md-component="logo">
+      
+  <img src="../../img/logo-inverted.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            ShellHub
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frequently Encountered Issues
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/shellhub-io/shellhub" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    shellhub-io/shellhub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../introduction/" class="md-tabs__link">
+      Introduction
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../getting-started/installing/" class="md-tabs__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../admin-manual/" class="md-tabs__link">
+        Admin Manual
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../user-manual/" class="md-tabs__link">
+        User Manual
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../cloud/" class="md-tabs__link">
+        ShellHub Cloud
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../troubleshooting/" class="md-tabs__link md-tabs__link--active">
+        Support
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="ShellHub" class="md-nav__button md-logo" aria-label="ShellHub" data-md-component="logo">
+      
+  <img src="../../img/logo-inverted.png" alt="logo">
+
+    </a>
+    ShellHub
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/shellhub-io/shellhub" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    shellhub-io/shellhub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../introduction/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Getting Started
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Getting Started" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Getting Started
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/installing/" class="md-nav__link">
+        Installing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/creating-account/" class="md-nav__link">
+        Creating account
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/creating-namespace/" class="md-nav__link">
+        Creating namespace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/registering-device/" class="md-nav__link">
+        Registering a device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../getting-started/connecting-device/" class="md-nav__link">
+        Connecting to a device
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Admin Manual
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Admin Manual" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Admin Manual
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/installing/" class="md-nav__link">
+        Installing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/configuring/" class="md-nav__link">
+        Configuring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/running/" class="md-nav__link">
+        Running
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/managing/" class="md-nav__link">
+        Managing
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/updating/" class="md-nav__link">
+        Updating
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/upgrade-enterprise/" class="md-nav__link">
+        Upgrade to Enterprise
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/production-deployment/" class="md-nav__link">
+        Production Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../admin-manual/admin-console/" class="md-nav__link">
+        Admin Console
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          User Manual
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Manual" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          User Manual
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_2" type="checkbox" id="__nav_5_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_2">
+          Namespaces
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Namespaces" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_2">
+          <span class="md-nav__icon md-icon"></span>
+          Namespaces
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/namespaces/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/namespaces/switching/" class="md-nav__link">
+        Switching namespace
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_3" type="checkbox" id="__nav_5_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_3">
+          Devices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Devices" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_3">
+          <span class="md-nav__icon md-icon"></span>
+          Devices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/devices/listing/" class="md-nav__link">
+        Listing devices
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/devices/adding/" class="md-nav__link">
+        Adding a device
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/devices/connecting/" class="md-nav__link">
+        Connecting to a device
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_4" type="checkbox" id="__nav_5_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_4">
+          Sessions
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Sessions" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_4">
+          <span class="md-nav__icon md-icon"></span>
+          Sessions
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/sessions/introduction/" class="md-nav__link">
+        Auditing sessions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/sessions/replaying/" class="md-nav__link">
+        Replaying a recorded session
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_5" type="checkbox" id="__nav_5_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_5">
+          Security
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Security" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_5">
+          <span class="md-nav__icon md-icon"></span>
+          Security
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/security/publickey-authentication/" class="md-nav__link">
+        Using public keys for authentication
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/security/managing-firewall-rules/" class="md-nav__link">
+        Managing firewall rules
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+      
+    
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_6" type="checkbox" id="__nav_5_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_6">
+          Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Advanced" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_6">
+          <span class="md-nav__icon md-icon"></span>
+          Advanced
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/agent/installing/" class="md-nav__link">
+        Installing agent
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../user-manual/agent/configuring/" class="md-nav__link">
+        Configuring
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          ShellHub Cloud
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="ShellHub Cloud" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          ShellHub Cloud
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/" class="md-nav__link">
+        Introduction
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cloud/security/" class="md-nav__link">
+        Security
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          Support
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Support" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Support
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        Troubleshooting
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Frequently Encountered Issues
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Frequently Encountered Issues
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-shellhub" class="md-nav__link">
+    What is ShellHub?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#does-shellhub-support-my-device" class="md-nav__link">
+    Does ShellHub support my device?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-should-use-the-shellhub" class="md-nav__link">
+    Who should use the ShellHub?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-shellhub-flavors-are-available" class="md-nav__link">
+    What ShellHub flavors are available?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-shellhub-open-source-and-shellhub-cloud-version" class="md-nav__link">
+    What is the difference between ShellHub Open Source and ShellHub Cloud version?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-shellhub" class="md-nav__link">
+    Installing the ShellHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing the ShellHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-use-shellhub" class="md-nav__link">
+    How do I use ShellHub?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-knowledge-do-i-need-to-install-shellhub-in-my-device" class="md-nav__link">
+    What knowledge do I need to install ShellHub in my device?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-shellhub-use-docker" class="md-nav__link">
+    Why does ShellHub use Docker?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-i-need-to-have-docker-to-install-the-shellhub-agent" class="md-nav__link">
+    Do I need to have Docker to install the ShellHub agent?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-work-with-low-power-devices-such-as-raspberrypi-thinker-board-and-others-is-it-possible-to-install-the-shellhub-agent-on-them" class="md-nav__link">
+    I work with low power devices such as RaspberryPi, Thinker Board, and others. Is it possible to install the ShellHub agent on them?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-shellhub" class="md-nav__link">
+    Using the ShellHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the ShellHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#my-device-does-not-show-up-in-the-shellhub-server-what-should-i-do" class="md-nav__link">
+    My device does not show up in the ShellHub server. What should I do?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-the-shellhub-with-balena" class="md-nav__link">
+    Can I use the ShellHub with Balena?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shellhub-server" class="md-nav__link">
+    ShellHub Server
+  </a>
+  
+    <nav class="md-nav" aria-label="ShellHub Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-i-use-the-docker-compose-down-command-will-i-lose-my-data-saved-on-the-server" class="md-nav__link">
+    If I use the “docker-compose down” command will I lose my data saved on the server?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-change-the-http-port-used-by-shellhub" class="md-nav__link">
+    Can I change the HTTP port used by ShellHub?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices" class="md-nav__link">
+    Devices
+  </a>
+  
+    <nav class="md-nav" aria-label="Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-verify-if-shellhub-is-installed" class="md-nav__link">
+    How to verify if ShellHub is installed?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-it-possible-to-add-automation-scripts" class="md-nav__link">
+    Is it possible to add automation scripts?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-the-same-tenant-id-on-more-than-one-device" class="md-nav__link">
+    Can I use the same tenant-id on more than one device?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-access-my-device-through-shellhub" class="md-nav__link">
+    How can I access my device through ShellHub?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-the-device-with-shellhub-always-need-a-password-for-the-user" class="md-nav__link">
+    Does the device with ShellHub always need a password for the user?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-access-httphttps-in-my-device" class="md-nav__link">
+    Can I access HTTP/HTTPS in my device?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-the-agent-runs-inside-a-container-on-the-device-do-i-have-access-to-the-processes-on-this-device" class="md-nav__link">
+    As the agent runs inside a container on the device, do I have access to the processes on this device?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-shellhub-cloud-guarantee-the-security-of-the-data-accessed" class="md-nav__link">
+    How does ShellHub Cloud guarantee the security of the data accessed?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-shellhub-endanger-device-security" class="md-nav__link">
+    Does ShellHub endanger device security?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-be-sure-that-shellhub-is-safe" class="md-nav__link">
+    How can I be sure that ShellHub is safe?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-shellhub" class="md-nav__link">
+    What is ShellHub?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#does-shellhub-support-my-device" class="md-nav__link">
+    Does ShellHub support my device?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#who-should-use-the-shellhub" class="md-nav__link">
+    Who should use the ShellHub?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-shellhub-flavors-are-available" class="md-nav__link">
+    What ShellHub flavors are available?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-difference-between-shellhub-open-source-and-shellhub-cloud-version" class="md-nav__link">
+    What is the difference between ShellHub Open Source and ShellHub Cloud version?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installing-the-shellhub" class="md-nav__link">
+    Installing the ShellHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Installing the ShellHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-do-i-use-shellhub" class="md-nav__link">
+    How do I use ShellHub?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#what-knowledge-do-i-need-to-install-shellhub-in-my-device" class="md-nav__link">
+    What knowledge do I need to install ShellHub in my device?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#why-does-shellhub-use-docker" class="md-nav__link">
+    Why does ShellHub use Docker?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#do-i-need-to-have-docker-to-install-the-shellhub-agent" class="md-nav__link">
+    Do I need to have Docker to install the ShellHub agent?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#i-work-with-low-power-devices-such-as-raspberrypi-thinker-board-and-others-is-it-possible-to-install-the-shellhub-agent-on-them" class="md-nav__link">
+    I work with low power devices such as RaspberryPi, Thinker Board, and others. Is it possible to install the ShellHub agent on them?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#using-the-shellhub" class="md-nav__link">
+    Using the ShellHub
+  </a>
+  
+    <nav class="md-nav" aria-label="Using the ShellHub">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#my-device-does-not-show-up-in-the-shellhub-server-what-should-i-do" class="md-nav__link">
+    My device does not show up in the ShellHub server. What should I do?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-the-shellhub-with-balena" class="md-nav__link">
+    Can I use the ShellHub with Balena?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#shellhub-server" class="md-nav__link">
+    ShellHub Server
+  </a>
+  
+    <nav class="md-nav" aria-label="ShellHub Server">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#if-i-use-the-docker-compose-down-command-will-i-lose-my-data-saved-on-the-server" class="md-nav__link">
+    If I use the “docker-compose down” command will I lose my data saved on the server?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-change-the-http-port-used-by-shellhub" class="md-nav__link">
+    Can I change the HTTP port used by ShellHub?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#devices" class="md-nav__link">
+    Devices
+  </a>
+  
+    <nav class="md-nav" aria-label="Devices">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-verify-if-shellhub-is-installed" class="md-nav__link">
+    How to verify if ShellHub is installed?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#is-it-possible-to-add-automation-scripts" class="md-nav__link">
+    Is it possible to add automation scripts?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-use-the-same-tenant-id-on-more-than-one-device" class="md-nav__link">
+    Can I use the same tenant-id on more than one device?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-access-my-device-through-shellhub" class="md-nav__link">
+    How can I access my device through ShellHub?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-the-device-with-shellhub-always-need-a-password-for-the-user" class="md-nav__link">
+    Does the device with ShellHub always need a password for the user?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#can-i-access-httphttps-in-my-device" class="md-nav__link">
+    Can I access HTTP/HTTPS in my device?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#as-the-agent-runs-inside-a-container-on-the-device-do-i-have-access-to-the-processes-on-this-device" class="md-nav__link">
+    As the agent runs inside a container on the device, do I have access to the processes on this device?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#security" class="md-nav__link">
+    Security
+  </a>
+  
+    <nav class="md-nav" aria-label="Security">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-does-shellhub-cloud-guarantee-the-security-of-the-data-accessed" class="md-nav__link">
+    How does ShellHub Cloud guarantee the security of the data accessed?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#does-shellhub-endanger-device-security" class="md-nav__link">
+    Does ShellHub endanger device security?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#how-can-i-be-sure-that-shellhub-is-safe" class="md-nav__link">
+    How can I be sure that ShellHub is safe?
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/shellhub-io/shellhub-io.github.io/edit/src/docs/support/faq.md" title="Edit this page" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="frequentely-asked-questions">Frequentely Asked Questions<a class="headerlink" href="#frequentely-asked-questions" title="Permanent link">&para;</a></h1>
+<h4 id="what-is-shellhub">What is ShellHub?<a class="headerlink" href="#what-is-shellhub" title="Permanent link">&para;</a></h4>
+<p>ShellHub is a modern SSH server for remotely accessing Linux devices via CLI or web-based user interface, it avoids the inconvenience such as firewall and NAT when getting your IP address, automating the access process, and helping you easily, seamlessly and securely connect your device to the internet.</p>
+<h4 id="does-shellhub-support-my-device">Does ShellHub support my device?<a class="headerlink" href="#does-shellhub-support-my-device" title="Permanent link">&para;</a></h4>
+<p>ShellHub is compatible with Linux devices of any hardware architecture, from single-board computers to desktop, as long as the device has Docker installed.</p>
+<h4 id="who-should-use-the-shellhub">Who should use the ShellHub?<a class="headerlink" href="#who-should-use-the-shellhub" title="Permanent link">&para;</a></h4>
+<p>ShellHub is useful for anyone who needs to access their devices safely through a practical and simple process.</p>
+<h4 id="what-shellhub-flavors-are-available">What ShellHub flavors are available?<a class="headerlink" href="#what-shellhub-flavors-are-available" title="Permanent link">&para;</a></h4>
+<p>ShellHub has two flavors: the ShellHub Open Source and the ShellHub Cloud. And yeah, the Open Source version is fully Free Software and will always be kept that way. We welcome any kind of contribution to our project, so please feel welcome.</p>
+<h4 id="what-is-the-difference-between-shellhub-open-source-and-shellhub-cloud-version">What is the difference between ShellHub Open Source and ShellHub Cloud version?<a class="headerlink" href="#what-is-the-difference-between-shellhub-open-source-and-shellhub-cloud-version" title="Permanent link">&para;</a></h4>
+<p>ShellHub agent is the same in both versions. The difference resides in features implemented on ShellHub Cloud, which includes technical support, managing firewall rules, session log record, and others that are still under development.</p>
+<h2 id="installing-the-shellhub">Installing the ShellHub<a class="headerlink" href="#installing-the-shellhub" title="Permanent link">&para;</a></h2>
+<h4 id="how-do-i-use-shellhub">How do I use ShellHub?<a class="headerlink" href="#how-do-i-use-shellhub" title="Permanent link">&para;</a></h4>
+<p>Register yourself on <a href="https://www.shellhub.io/">ShellHub</a> to create an account. After you've registered, you will be on the dashboard. In dashboard the <code>tenant-id</code> is available at the top right of the screen and will be used to authenticate your device when it connects to the server.</p>
+<p>This identification must be configured inside the agent (ShellHub client) that will be saved in the device along with the image or it must be added as a Docker container.</p>
+<p>By default, ShellHub uses <a href="https://shellhub-io.github.io/user-manual/installing/#using-the-one-line-installation-script">Docker to run the agent</a>, but it's possible to install ShellHub from the <a href="https://shellhub-io.github.io/user-manual/installing/#installing-from-the-source-code">source code</a>, or even integrate ShellHub agent into the existing <a href="https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image">Yocto Project image</a>. Take a look at the tutorial, choose the best for you, and have fun!</p>
+<h4 id="what-knowledge-do-i-need-to-install-shellhub-in-my-device">What knowledge do I need to install ShellHub in my device?<a class="headerlink" href="#what-knowledge-do-i-need-to-install-shellhub-in-my-device" title="Permanent link">&para;</a></h4>
+<p>Depending on the installation, different skill sets are needed. ShellHub installation is easy. But if you don't have experience in code, we suggest our <a href="https://shellhub-io.github.io/getting-started/installing/">step-by-step using Docker</a>.</p>
+<h4 id="why-does-shellhub-use-docker">Why does ShellHub use Docker?<a class="headerlink" href="#why-does-shellhub-use-docker" title="Permanent link">&para;</a></h4>
+<p>By default, ShellHub uses Docker to run the agent, which is very convenient, as it provides frictionless addition of devices on the existing system, with Docker support being the only requirement. Docker is also an easy and convenient way to install ShellHub, but not the only one. Please, check the <a href="https://shellhub-io.github.io/user-manual/">user manual</a> for more.</p>
+<h4 id="do-i-need-to-have-docker-to-install-the-shellhub-agent">Do I need to have Docker to install the ShellHub agent?<a class="headerlink" href="#do-i-need-to-have-docker-to-install-the-shellhub-agent" title="Permanent link">&para;</a></h4>
+<p>No. It’s possible to install ShellHub from the <a href="https://shellhub-io.github.io/user-manual/installing/#installing-from-the-source-code">source code</a>, or if you use <a href="https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image">Yocto Project</a>, it’s possible to integrate ShellHub into a ready image. Please check the <a href="https://shellhub-io.github.io/user-manual/">user manual</a> for more details.</p>
+<h4 id="i-work-with-low-power-devices-such-as-raspberrypi-thinker-board-and-others-is-it-possible-to-install-the-shellhub-agent-on-them">I work with low power devices such as RaspberryPi, Thinker Board, and others. Is it possible to install the ShellHub agent on them?<a class="headerlink" href="#i-work-with-low-power-devices-such-as-raspberrypi-thinker-board-and-others-is-it-possible-to-install-the-shellhub-agent-on-them" title="Permanent link">&para;</a></h4>
+<p>Yes. You can use ShellHub to access virtually any hardware architecture. For low-end devices, take a look at installing from the <a href="https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image">source code</a> and integrate with an existing <a href="https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image">Yocto Project image</a> documentation sections for ways to do the integration for this kind of device.</p>
+<h2 id="using-the-shellhub">Using the ShellHub<a class="headerlink" href="#using-the-shellhub" title="Permanent link">&para;</a></h2>
+<h4 id="my-device-does-not-show-up-in-the-shellhub-server-what-should-i-do">My device does not show up in the ShellHub server. What should I do?<a class="headerlink" href="#my-device-does-not-show-up-in-the-shellhub-server-what-should-i-do" title="Permanent link">&para;</a></h4>
+<p>First of all, check the internet connection in the device. Then, verify if the device has the Shellhub agent installed. Finally, verify if the device has been accepted on the user interface as it will require manual acceptance to move from the pending state. In case of problems, contact us on <a href="https://gitter.im/shellhub-io/community?at=5e30882a6f9d3d3498f5989d">Gitter</a>.</p>
+<h4 id="can-i-use-the-shellhub-with-balena">Can I use the ShellHub with Balena?<a class="headerlink" href="#can-i-use-the-shellhub-with-balena" title="Permanent link">&para;</a></h4>
+<p>Yes, just install ShellHub from the <a href="https://shellhub-io.github.io/user-manual/installing/#installing-from-the-source-code">source code</a>.</p>
+<h2 id="shellhub-server">ShellHub Server<a class="headerlink" href="#shellhub-server" title="Permanent link">&para;</a></h2>
+<h4 id="if-i-use-the-docker-compose-down-command-will-i-lose-my-data-saved-on-the-server">If I use the “docker-compose down” command will I lose my data saved on the server?<a class="headerlink" href="#if-i-use-the-docker-compose-down-command-will-i-lose-my-data-saved-on-the-server" title="Permanent link">&para;</a></h4>
+<p>Yes. The <code>docker-compose down</code> command will stop the server and remove containers, networks, volumes, and images created. If you want to use the data stored on this server in the future you must use the <code>docker-compose stop</code> command that stops executing containers without removing them. To restart them just use <code>docker-compose start</code>. See more in <a href="https://docs.docker.com/">Docker documentation</a>.</p>
+<h4 id="can-i-change-the-http-port-used-by-shellhub">Can I change the HTTP port used by ShellHub?<a class="headerlink" href="#can-i-change-the-http-port-used-by-shellhub" title="Permanent link">&para;</a></h4>
+<p>Yes, you can access the .env file and overwrite the door setting SHELLHUB_HTTP_PORT.</p>
+<h2 id="devices">Devices<a class="headerlink" href="#devices" title="Permanent link">&para;</a></h2>
+<h4 id="how-to-verify-if-shellhub-is-installed">How to verify if ShellHub is installed?<a class="headerlink" href="#how-to-verify-if-shellhub-is-installed" title="Permanent link">&para;</a></h4>
+<p>Just type <code>ps -aux | grep "shellhubio"</code> in the device’s terminal e confirm the existence of this process.</p>
+<h4 id="is-it-possible-to-add-automation-scripts">Is it possible to add automation scripts?<a class="headerlink" href="#is-it-possible-to-add-automation-scripts" title="Permanent link">&para;</a></h4>
+<p>ShellHub is not an automation tool, as its objective is to provide access in an efficient and simple way. However, it can be used together with other tools that provide automatic processes like Ansible, as long as they use the SSH protocol for the connection.</p>
+<h4 id="can-i-use-the-same-tenant-id-on-more-than-one-device">Can I use the same <code>tenant-id</code> on more than one device?<a class="headerlink" href="#can-i-use-the-same-tenant-id-on-more-than-one-device" title="Permanent link">&para;</a></h4>
+<p>Yes, the <code>tenant-id</code> is a way of identifying each user's account, being linked directly to it, and not to the device. You can, for example, generate a Yocto Project image with a tenant id for an entire fleet of devices without problems or leave an operating system with the Docker container installed and configured with a given <code>tenant-id</code>.</p>
+<h4 id="how-can-i-access-my-device-through-shellhub">How can I access my device through ShellHub?<a class="headerlink" href="#how-can-i-access-my-device-through-shellhub" title="Permanent link">&para;</a></h4>
+<p>Access devices already accepted on the Shellhub server (either Open Source or Cloud) can be done in two ways: on the Devices tab, in the ShellHub server's dashboard, or through the terminal on your workstation, typing user@SSHID (the SSHID is available on dashboard in the Devices tab).</p>
+<h4 id="does-the-device-with-shellhub-always-need-a-password-for-the-user">Does the device with ShellHub always need a password for the user?<a class="headerlink" href="#does-the-device-with-shellhub-always-need-a-password-for-the-user" title="Permanent link">&para;</a></h4>
+<p>Yes, you need a password. It's part of the tool's configuration and a decision that aims at greater security to access.</p>
+<h4 id="can-i-access-httphttps-in-my-device">Can I access HTTP/HTTPS in my device?<a class="headerlink" href="#can-i-access-httphttps-in-my-device" title="Permanent link">&para;</a></h4>
+<p>Currently, ShellHub doesn’t support other services (HTTP and HTTPS), only SSH.
+It’s on our plans to add this kind of feature.</p>
+<h4 id="as-the-agent-runs-inside-a-container-on-the-device-do-i-have-access-to-the-processes-on-this-device">As the agent runs inside a container on the device, do I have access to the processes on this device?<a class="headerlink" href="#as-the-agent-runs-inside-a-container-on-the-device-do-i-have-access-to-the-processes-on-this-device" title="Permanent link">&para;</a></h4>
+<p>Yes. The container runs in the privileged mode, so it’s possible to access the processes of the device normally.</p>
+<h2 id="security">Security<a class="headerlink" href="#security" title="Permanent link">&para;</a></h2>
+<h4 id="how-does-shellhub-cloud-guarantee-the-security-of-the-data-accessed">How does ShellHub Cloud guarantee the security of the data accessed?<a class="headerlink" href="#how-does-shellhub-cloud-guarantee-the-security-of-the-data-accessed" title="Permanent link">&para;</a></h4>
+<p>All data stored by ShellHub is maintained by companies specialized in secure storage in the same places that already guarantees the security of data from the other tools and processes of the <a href="https://www.ossystems.com.br">O.S.Systems</a>.</p>
+<h4 id="does-shellhub-endanger-device-security">Does ShellHub endanger device security?<a class="headerlink" href="#does-shellhub-endanger-device-security" title="Permanent link">&para;</a></h4>
+<p>No way. ShellHub keeps user passwords and devices encrypted so no one can access them besides the user. The access to devices by the device is done only with the username and password.</p>
+<h4 id="how-can-i-be-sure-that-shellhub-is-safe">How can I be sure that ShellHub is safe?<a class="headerlink" href="#how-can-i-be-sure-that-shellhub-is-safe" title="Permanent link">&para;</a></h4>
+<p>ShellHub is an open source project, so it's open to contributions from the community and available for constant verification of developers and users. That's why open-source projects are considerably safer. And for this reason, ShellHub agent is the same in both versions: Cloud or Open Source.</p>
+<div class="admonition info">
+<p class="admonition-title">If you have any questions that are not in the FAQ, are having difficulty and want help, or want to exchange some ideas with our team, access our <a href="https://gitter.im/shellhub-io/community?at=5e30882a6f9d3d3498f5989d">Gitter</a> and we will be happy with your contact.</p>
+</div>
+
+
+  
+
+
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../troubleshooting/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Troubleshooting" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Troubleshooting
+            </div>
+          </div>
+        </a>
+      
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2020 O.S. Systems
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections"], "search": "../../assets/javascripts/workers/search.ecf98df9.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.9c69f0bc.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,7 +1,7 @@
 # Project information
 site_name: ShellHub
 site_description: 'ShellHub enables teams to easily access any Linux device behind firewall and NAT'
-site_url: 'https://docs.shellhub.io'
+site_url: 'https://shellhub-io.github.io'
 
 # Repository
 repo_name: 'shellhub-io/shellhub'
@@ -81,10 +81,10 @@ plugins:
   - search
   - redirects:
       redirect_maps:
-        'getting-started.md': 'http://docs.shellhub.io/getting-started/installing/'
-        'guides/connecting-device.md': 'http://docs.shellhub.io/getting-started/connecting-device/'
-        'guides/registering-device.md': 'http://docs.shellhub.io/getting-started/registering-device/'
-        'guides/adding-account.md': 'http://docs.shellhub.io/getting-started/creating-account/'
+        'getting-started.md': 'https://shellhub-io.github.io/getting-started/installing/'
+        'guides/connecting-device.md': 'https://shellhub-io.github.io/getting-started/connecting-device/'
+        'guides/registering-device.md': 'https://shellhub-io.github.io/getting-started/registering-device/'
+        'guides/adding-account.md': 'https://shellhub-io.github.io/getting-started/creating-account/'
   - markdownextradata: {}
 
 # Navigation

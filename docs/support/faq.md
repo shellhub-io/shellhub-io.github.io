@@ -22,19 +22,19 @@ Register yourself on [ShellHub](https://www.shellhub.io/) to create an account. 
 
 This identification must be configured inside the agent (ShellHub client) that will be saved in the device along with the image or it must be added as a Docker container.
 
-By default, ShellHub uses [Docker to run the agent](https://docs.shellhub.io/user-manual/installing/#using-the-one-line-installation-script), but it's possible to install ShellHub from the [source code](https://docs.shellhub.io/user-manual/installing/#installing-from-the-source-code), or even integrate ShellHub agent into the existing [Yocto Project image](https://docs.shellhub.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image). Take a look at the tutorial, choose the best for you, and have fun!
+By default, ShellHub uses [Docker to run the agent](https://shellhub-io.github.io/user-manual/installing/#using-the-one-line-installation-script), but it's possible to install ShellHub from the [source code](https://shellhub-io.github.io/user-manual/installing/#installing-from-the-source-code), or even integrate ShellHub agent into the existing [Yocto Project image](https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image). Take a look at the tutorial, choose the best for you, and have fun!
 
 #### What knowledge do I need to install ShellHub in my device?
-Depending on the installation, different skill sets are needed. ShellHub installation is easy. But if you don't have experience in code, we suggest our [step-by-step using Docker](https://docs.shellhub.io/getting-started/installing/).
+Depending on the installation, different skill sets are needed. ShellHub installation is easy. But if you don't have experience in code, we suggest our [step-by-step using Docker](https://shellhub-io.github.io/getting-started/installing/).
 
 #### Why does ShellHub use Docker?
-By default, ShellHub uses Docker to run the agent, which is very convenient, as it provides frictionless addition of devices on the existing system, with Docker support being the only requirement. Docker is also an easy and convenient way to install ShellHub, but not the only one. Please, check the [user manual](https://docs.shellhub.io/user-manual/) for more.
+By default, ShellHub uses Docker to run the agent, which is very convenient, as it provides frictionless addition of devices on the existing system, with Docker support being the only requirement. Docker is also an easy and convenient way to install ShellHub, but not the only one. Please, check the [user manual](https://shellhub-io.github.io/user-manual/) for more.
 
 #### Do I need to have Docker to install the ShellHub agent?
-No. It’s possible to install ShellHub from the [source code](https://docs.shellhub.io/user-manual/installing/#installing-from-the-source-code), or if you use [Yocto Project](https://docs.shellhub.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image), it’s possible to integrate ShellHub into a ready image. Please check the [user manual](https://docs.shellhub.io/user-manual/) for more details.
+No. It’s possible to install ShellHub from the [source code](https://shellhub-io.github.io/user-manual/installing/#installing-from-the-source-code), or if you use [Yocto Project](https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image), it’s possible to integrate ShellHub into a ready image. Please check the [user manual](https://shellhub-io.github.io/user-manual/) for more details.
 
 #### I work with low power devices such as RaspberryPi, Thinker Board, and others. Is it possible to install the ShellHub agent on them?
-Yes. You can use ShellHub to access virtually any hardware architecture. For low-end devices, take a look at installing from the [source code](https://docs.shellhub.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image) and integrate with an existing [Yocto Project image](https://docs.shellhub.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image) documentation sections for ways to do the integration for this kind of device.
+Yes. You can use ShellHub to access virtually any hardware architecture. For low-end devices, take a look at installing from the [source code](https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image) and integrate with an existing [Yocto Project image](https://shellhub-io.github.io/user-manual/installing/#integrate-with-an-existing-yocto-project-image) documentation sections for ways to do the integration for this kind of device.
 
 ## Using the ShellHub
 
@@ -42,7 +42,7 @@ Yes. You can use ShellHub to access virtually any hardware architecture. For low
 First of all, check the internet connection in the device. Then, verify if the device has the Shellhub agent installed. Finally, verify if the device has been accepted on the user interface as it will require manual acceptance to move from the pending state. In case of problems, contact us on [Gitter](https://gitter.im/shellhub-io/community?at=5e30882a6f9d3d3498f5989d).
 
 #### Can I use the ShellHub with Balena?
-Yes, just install ShellHub from the [source code](https://docs.shellhub.io/user-manual/installing/#installing-from-the-source-code).
+Yes, just install ShellHub from the [source code](https://shellhub-io.github.io/user-manual/installing/#installing-from-the-source-code).
 
 ## ShellHub Server
 
